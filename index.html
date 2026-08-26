@@ -188,7 +188,7 @@ body.scrolled .cue{opacity:0;animation:none}
   margin:22px auto clamp(40px,7vh,80px);max-width:1000px
 }
 .card{
-  position:relative;height:186px;perspective:1000px;cursor:pointer;
+  position:relative;height:252px;perspective:1000px;cursor:pointer;
   opacity:0;transform:translateY(22px);
   transition:opacity .8s ease,transform .8s cubic-bezier(.2,.9,.3,1)
 }
@@ -203,7 +203,7 @@ body.scrolled .cue{opacity:0;animation:none}
 .face{
   position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
   border:1px solid var(--ring);border-radius:16px;padding:20px;
-  background:rgba(255,255,255,.035);backdrop-filter:blur(10px);
+  background:rgba(255,255,255,.035);backdrop-filter:blur(10px);overflow:hidden;
   display:flex;flex-direction:column;justify-content:space-between;
   transition:border-color var(--t),background var(--t)
 }
@@ -215,8 +215,8 @@ body.scrolled .cue{opacity:0;animation:none}
   letter-spacing:.01em
 }
 .card .sub,.card .body{font-size:13px;color:var(--muted);line-height:1.55;transition:color var(--t)}
-.card .body{font-size:13.5px;color:var(--ink);opacity:.86}
-.tap{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--jade);opacity:1}
+.card .body{font-size:13px;line-height:1.52;color:var(--ink);opacity:.88}
+.tap{margin-top:auto;padding-top:10px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--jade);opacity:1}
 
 /* ---------- controls ---------- */
 .controls{
@@ -240,7 +240,7 @@ body.revealed .replay{opacity:1;visibility:visible;pointer-events:auto}
 @media (max-width:640px){
   .stage{margin-left:-22px;margin-right:-22px;width:calc(100% + 44px)}
   .hint{font-size:10px;padding:8px 15px;letter-spacing:.14em}
-  .card{height:172px}
+  .card{height:236px}
   .controls{right:10px;top:10px;gap:6px}
   .btn{padding:11px 14px;min-height:44px;font-size:10px}
 }
@@ -277,11 +277,17 @@ body.revealed .replay{opacity:1;visibility:visible;pointer-events:auto}
   <linearGradient id="gCape" x1="0" y1="0" x2="0" y2="1">
     <stop offset="0" stop-color="#1c2037"/><stop offset="1" stop-color="#04050b"/>
   </linearGradient>
-  <linearGradient id="gHelm" x1=".2" y1="0" x2=".8" y2="1">
-    <stop offset="0" stop-color="#4a5274"/><stop offset=".45" stop-color="#232941"/><stop offset="1" stop-color="#0a0c15"/>
+  <linearGradient id="gHelm" x1=".25" y1="0" x2=".75" y2="1">
+    <stop offset="0" stop-color="#3f4658"/><stop offset=".38" stop-color="#171a24"/><stop offset="1" stop-color="#030407"/>
+  </linearGradient>
+  <linearGradient id="gFace" x1=".2" y1="0" x2=".8" y2="1">
+    <stop offset="0" stop-color="#4b5468"/><stop offset=".5" stop-color="#2b3040"/><stop offset="1" stop-color="#161a25"/>
+  </linearGradient>
+  <linearGradient id="gVent" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#9aa2b6"/><stop offset="1" stop-color="#5a6274"/>
   </linearGradient>
   <radialGradient id="gLens" cx=".35" cy=".3" r=".9">
-    <stop offset="0" stop-color="#c2564a"/><stop offset=".42" stop-color="#6e1b16"/><stop offset="1" stop-color="#1c0605"/>
+    <stop offset="0" stop-color="#8e3a30"/><stop offset=".4" stop-color="#40100c"/><stop offset="1" stop-color="#0d0303"/>
   </radialGradient>
   <radialGradient id="gJade" cx=".34" cy=".28" r=".85">
     <stop offset="0" stop-color="#d7ffe9"/><stop offset=".38" stop-color="#5fe3a6"/><stop offset="1" stop-color="#0f7a52"/>
@@ -407,25 +413,40 @@ body.revealed .replay{opacity:1;visibility:visible;pointer-events:auto}
   </g>
   <!-- helmet -->
   <g transform="translate(0,-320)"><g id="helmet">
-    <path d="M-46,-8 C-46,-58 -26,-84 0,-84 C26,-84 46,-58 46,-8 L46,4 L-46,4 Z" fill="url(#gHelm)"/>
-    <path d="M-31,-58 C-21,-73 -5,-79 8,-76 C-9,-71 -23,-65 -31,-58 Z" fill="#c8d2f0" opacity=".33"/>
-    <path d="M-46,-14 C-61,-8 -65,14 -58,36 L-38,38 C-45,16 -43,-2 -36,-12 Z" fill="url(#gHelm)"/>
-    <path d="M46,-14 C61,-8 65,14 58,36 L38,38 C45,16 43,-2 36,-12 Z" fill="url(#gHelm)"/>
-    <path d="M-44,-10 L44,-10 L38,8 L-38,8 Z" fill="#0a0c15"/>
-    <path class="eyeGlow" d="M-38,-6 L-11,-12 L-7,6 L-34,12 Z" fill="url(#gLens)"/>
-    <path class="eyeGlow" d="M38,-6 L11,-12 L7,6 L34,12 Z" fill="url(#gLens)"/>
-    <path d="M-36,-5 L-15,-9 L-14,-4 L-35,0 Z" fill="#fff" opacity=".22"/>
-    <path d="M36,-5 L15,-9 L14,-4 L35,0 Z" fill="#fff" opacity=".22"/>
-    <path d="M-7,8 L7,8 L5,21 L-5,21 Z" fill="#12162a"/>
-    <rect x="-21" y="13" width="42" height="20" rx="3" fill="#05070d"/>
-    <g stroke="#39426a" stroke-width="2">
-      <line x1="-14" y1="16" x2="-14" y2="30"/><line x1="-5" y1="16" x2="-5" y2="30"/>
-      <line x1="4" y1="16" x2="4" y2="30"/><line x1="13" y1="16" x2="13" y2="30"/>
+    <!-- gloss black dome -->
+    <path d="M-45,-4 C-47,-56 -27,-86 0,-86 C27,-86 47,-56 45,-4 Z" fill="url(#gHelm)"/>
+    <path d="M-32,-56 C-22,-73 -4,-80 9,-76 C-8,-70 -23,-64 -32,-56 Z" fill="#dbe3fb" opacity=".38"/>
+    <path d="M26,-72 C36,-60 40,-38 39,-14 C41,-40 36,-60 26,-72 Z" fill="#aeb9d8" opacity=".22"/>
+    <!-- helmet skirt / cheek wings -->
+    <path d="M-45,-8 C-60,-2 -66,18 -61,40 L-41,42 C-46,20 -44,2 -37,-8 Z" fill="url(#gHelm)"/>
+    <path d="M45,-8 C60,-2 66,18 61,40 L41,42 C46,20 44,2 37,-8 Z" fill="url(#gHelm)"/>
+    <!-- gunmetal face plate -->
+    <path d="M-41,-16 C-41,-34 -23,-44 0,-44 C23,-44 41,-34 41,-16 L37,30 L-37,30 Z" fill="url(#gFace)"/>
+    <!-- brow ridge, dipping to a point -->
+    <path d="M-42,-20 L0,-8 L42,-20 L42,-8 L0,4 L-42,-8 Z" fill="#0a0c12"/>
+    <!-- eye lenses -->
+    <path class="eyeGlow" d="M-37,-8 L-12,-15 L-8,5 L-33,12 Z" fill="url(#gLens)"/>
+    <path class="eyeGlow" d="M37,-8 L12,-15 L8,5 L33,12 Z" fill="url(#gLens)"/>
+    <path d="M-35,-7 L-16,-12 L-15,-7 L-34,-2 Z" fill="#fff" opacity=".26"/>
+    <path d="M35,-7 L16,-12 L15,-7 L34,-2 Z" fill="#fff" opacity=".26"/>
+    <!-- nose ridge -->
+    <path d="M-6,4 L6,4 L4,19 L-4,19 Z" fill="#0d1018"/>
+    <!-- mouth grille -->
+    <path d="M-20,17 L20,17 L16,35 L-16,35 Z" fill="#05070c"/>
+    <g stroke="#5f6880" stroke-width="2.2" stroke-linecap="round">
+      <line x1="-11" y1="20" x2="-12" y2="32"/><line x1="-4" y1="20" x2="-4" y2="32"/>
+      <line x1="4" y1="20" x2="4" y2="32"/><line x1="11" y1="20" x2="12" y2="32"/>
     </g>
-    <rect x="-42" y="15" width="13" height="15" rx="2" fill="#10131f"/>
-    <rect x="29" y="15" width="13" height="15" rx="2" fill="#10131f"/>
-    <path d="M-53,32 L53,32 L46,52 L-46,52 Z" fill="#141826"/>
-    <path d="M-53,32 L53,32 L51,38 L-51,38 Z" fill="#2a3150" opacity=".7"/>
+    <!-- silver cheek vents -->
+    <rect x="-40" y="14" width="15" height="18" rx="2" fill="url(#gVent)"/>
+    <rect x="25" y="14" width="15" height="18" rx="2" fill="url(#gVent)"/>
+    <g stroke="#2b3040" stroke-width="1.6">
+      <line x1="-38" y1="19" x2="-27" y2="19"/><line x1="-38" y1="24" x2="-27" y2="24"/><line x1="-38" y1="29" x2="-27" y2="29"/>
+      <line x1="27" y1="19" x2="38" y2="19"/><line x1="27" y1="24" x2="38" y2="24"/><line x1="27" y1="29" x2="38" y2="29"/>
+    </g>
+    <!-- chin + neck flange -->
+    <path d="M-52,34 L52,34 L45,54 L-45,54 Z" fill="#0a0c12"/>
+    <path d="M-52,34 L52,34 L50,40 L-50,40 Z" fill="#454d63" opacity=".8"/>
   </g></g>
 </g>
 </g>
@@ -457,18 +478,23 @@ body.revealed .replay{opacity:1;visibility:visible;pointer-events:auto}
     <path d="M-42,-118 Q0,-92 42,-118" fill="none" stroke="#c9853a" stroke-width="2.2" opacity=".4"/>
     <path d="M-15,-66 Q0,-59 15,-66" fill="none" stroke="#c9853a" stroke-width="2" opacity=".3"/>
 
-    <!-- robe: diagonal across the body, then over the right shoulder -->
-    <path d="M42,-150 C10,-118 -22,-92 -64,-72 L-68,-30 C-12,-52 28,-86 56,-124 Z" fill="url(#gRobe)"/>
-    <path d="M36,-142 C6,-114 -22,-92 -58,-76" fill="none" stroke="#ffe4a6" stroke-width="2" opacity=".4"/>
-    <path d="M44,-158 C88,-146 100,-100 94,-56 L58,-44 C76,-78 74,-116 38,-140 Z" fill="url(#gRobe)"/>
-    <path d="M54,-148 C82,-134 90,-102 86,-64 L72,-58 C78,-96 72,-120 48,-138 Z" fill="url(#gRobe2)" opacity=".5"/>
+    <!-- robe, symmetric U-neck drape -->
+    <path d="M-76,-126 C-60,-96 -30,-86 0,-86 C30,-86 60,-96 76,-126 L86,-28 L-86,-28 Z" fill="url(#gRobe)"/>
+    <path d="M-76,-126 C-60,-96 -30,-86 0,-86 C30,-86 60,-96 76,-126" fill="none" stroke="#ffe4a6" stroke-width="2.4" opacity=".5"/>
+    <path d="M-58,-104 C-40,-76 -18,-64 0,-62 C18,-64 40,-76 58,-104" fill="none" stroke="#ffe4a6" stroke-width="1.8" opacity=".28"/>
+    <path d="M-70,-66 C-40,-50 40,-50 70,-66" fill="none" stroke="#a3521a" stroke-width="1.8" opacity=".3"/>
 
-    <!-- bare shoulder + arm reaching the lap -->
+    <!-- shoulders: identical -->
     <circle cx="-70" cy="-138" r="27" fill="url(#gSkin)"/>
+    <circle cx="70" cy="-138" r="27" fill="url(#gSkin)"/>
+
+    <!-- arms: identical, shoulder to lap -->
     <path d="M-90,-134 C-104,-102 -100,-72 -76,-57 C-58,-46 -38,-43 -24,-47 L-28,-67
              C-46,-66 -64,-74 -73,-91 C-80,-106 -82,-122 -70,-135 Z" fill="url(#gSkin)"/>
-    <path d="M-88,-120 C-95,-94 -88,-72 -62,-58" fill="none" stroke="#c9853a" stroke-width="1.8" opacity=".28"/>
-    <path d="M74,-58 C60,-48 42,-44 26,-46 L28,-66 C46,-66 60,-70 70,-78 Z" fill="url(#gSkin)"/>
+    <path d="M90,-134 C104,-102 100,-72 76,-57 C58,-46 38,-43 24,-47 L28,-67
+             C46,-66 64,-74 73,-91 C80,-106 82,-122 70,-135 Z" fill="url(#gSkin)"/>
+    <path d="M-88,-120 C-95,-94 -88,-72 -62,-58" fill="none" stroke="#c9853a" stroke-width="1.8" opacity=".26"/>
+    <path d="M88,-120 C95,-94 88,-72 62,-58" fill="none" stroke="#c9853a" stroke-width="1.8" opacity=".26"/>
 
     <!-- feet on the lap -->
     <ellipse cx="-30" cy="-30" rx="23" ry="10" fill="url(#gSkin)" transform="rotate(-8 -30 -30)"/>
@@ -523,8 +549,8 @@ body.revealed .replay{opacity:1;visibility:visible;pointer-events:auto}
 
 <circle id="flash" cx="500" cy="264" r="10" fill="url(#gFlash)"/>
 
-<line id="chain" x1="830" y1="0" x2="830" y2="250" stroke="#c8b48a" stroke-width="1.6" opacity=".55"/>
 <g id="pendantSwing">
+  <line id="chain" x1="830" y1="0" x2="830" y2="250" stroke="#c8b48a" stroke-width="1.6" opacity=".55"/>
   <g id="pendant" transform="translate(830,250)">
     <circle cx="0" cy="0" r="52" fill="#7cf3bd" opacity=".22" filter="url(#soft2)"/>
     <circle class="ping" cx="0" cy="0" r="30" fill="none" stroke="#7cf3bd" stroke-width="1.5"/>
@@ -859,12 +885,11 @@ function armNudges(){
   nudgeTimer = setTimeout(function(){
     if (state !== "idle") return;
     swing.classList.add("grabbed");
-    pendant.classList.add("demo");
     setHint("Возьми нефрит пальцем и веди к нему", "Take the jade and pull it onto him");
-    setTimeout(function(){
-      pendant.classList.remove("demo");
-      if (state === "idle") swing.classList.remove("grabbed");
-    }, 1750);
+    pendant.style.transition = "transform .9s cubic-bezier(.4,0,.3,1)";
+    place(690, 300);
+    setTimeout(function(){ if (state === "idle") place(HOME.x, HOME.y); }, 950);
+    setTimeout(function(){ if (state === "idle") swing.classList.remove("grabbed"); }, 1950);
   }, 9000);
   autoTimer = setTimeout(function(){ if (state === "idle") awaken(); }, 26000);
 }
