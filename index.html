@@ -287,7 +287,7 @@ body.revealed .replay{opacity:1;visibility:visible;pointer-events:auto}
     <stop offset="0" stop-color="#9aa2b6"/><stop offset="1" stop-color="#5a6274"/>
   </linearGradient>
   <radialGradient id="gLens" cx=".35" cy=".3" r=".9">
-    <stop offset="0" stop-color="#6b3b32"/><stop offset=".38" stop-color="#2a100c"/><stop offset="1" stop-color="#080302"/>
+    <stop offset="0" stop-color="#ffc9b4"/><stop offset=".28" stop-color="#ff4a24"/><stop offset=".72" stop-color="#e01008"/><stop offset="1" stop-color="#6d0704"/>
   </radialGradient>
   <radialGradient id="gJade" cx=".34" cy=".28" r=".85">
     <stop offset="0" stop-color="#d7ffe9"/><stop offset=".38" stop-color="#5fe3a6"/><stop offset="1" stop-color="#0f7a52"/>
@@ -308,7 +308,7 @@ body.revealed .replay{opacity:1;visibility:visible;pointer-events:auto}
     <stop offset="0" stop-color="#f5c96b"/><stop offset=".5" stop-color="#3ddc97"/><stop offset="1" stop-color="#f5c96b"/>
   </linearGradient>
   <radialGradient id="gGlowRed" cx=".5" cy=".5" r=".5">
-    <stop offset="0" stop-color="#ff2a1e" stop-opacity=".55"/><stop offset="1" stop-color="#ff2a1e" stop-opacity="0"/>
+    <stop offset="0" stop-color="#ff2a1e" stop-opacity=".68"/><stop offset="1" stop-color="#ff2a1e" stop-opacity="0"/>
   </radialGradient>
   <radialGradient id="gGlowJade" cx=".5" cy=".5" r=".5">
     <stop offset="0" stop-color="#7cf3bd" stop-opacity=".6"/><stop offset=".55" stop-color="#f5c96b" stop-opacity=".18"/><stop offset="1" stop-color="#f5c96b" stop-opacity="0"/>
@@ -436,10 +436,12 @@ body.revealed .replay{opacity:1;visibility:visible;pointer-events:auto}
     <path d="M-43,-5 C-31,-14 -13,-17 0,-10 C13,-17 31,-14 43,-5 L41,6 C29,-3 13,-6 0,1 C-13,-6 -29,-3 -41,6 Z" fill="#07090f"/>
 
     <!-- lenses -->
+    <path class="eyeGlow" d="M-41,3 C-32,-8 -17,-12 -7,-9 L-4,11 C-14,9 -28,13 -37,21 Z" fill="#ff2f16" opacity=".75" filter="url(#soft2)"/>
     <path class="eyeGlow" d="M-39,4 C-31,-5 -18,-9 -9,-6 L-6,9 C-15,7 -28,11 -36,18 Z" fill="url(#gLens)"/>
+    <path class="eyeGlow" d="M41,3 C32,-8 17,-12 7,-9 L4,11 C14,9 28,13 37,21 Z" fill="#ff2f16" opacity=".75" filter="url(#soft2)"/>
     <path class="eyeGlow" d="M39,4 C31,-5 18,-9 9,-6 L6,9 C15,7 28,11 36,18 Z" fill="url(#gLens)"/>
-    <path d="M-37,4 C-30,-3 -19,-7 -11,-5 L-11,-1 C-19,-3 -29,1 -35,8 Z" fill="#fff" opacity=".26"/>
-    <path d="M37,4 C30,-3 19,-7 11,-5 L11,-1 C19,-3 29,1 35,8 Z" fill="#fff" opacity=".26"/>
+    <path d="M-37,4 C-30,-3 -19,-7 -11,-5 L-11,-1 C-19,-3 -29,1 -35,8 Z" fill="#fff" opacity=".45"/>
+    <path d="M37,4 C30,-3 19,-7 11,-5 L11,-1 C19,-3 29,1 35,8 Z" fill="#fff" opacity=".45"/>
 
     <!-- nose bridge -->
     <path d="M-5,-2 L5,-2 L9,19 L-9,19 Z" fill="#0b0e16"/>
