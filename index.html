@@ -1,0 +1,911 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Владимир · 23 августа</title>
+<meta name="description" content="С днём рождения, Владимир.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☸️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg0:#04050c; --bg1:#0b1024; --bg2:#161a3a;
+  --ink:#e9ecff; --muted:#8f9cc6;
+  --accent:#ff4136; --accent-soft:rgba(255,65,54,.35);
+  --jade:#3ddc97; --gold:#f5c96b; --rose:#ff9bb3;
+  --ring:rgba(255,255,255,.08);
+  --t:1.8s cubic-bezier(.32,.06,.2,1);
+}
+body.awakened{
+  --bg0:#04100e; --bg1:#0a2620; --bg2:#124036;
+  --ink:#f3fbf6; --muted:#a5d6c2;
+  --accent:#3ddc97; --accent-soft:rgba(61,220,151,.32);
+  --ring:rgba(245,201,107,.16);
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg0); color:var(--ink);
+  font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-weight:300; line-height:1.65; overflow-x:hidden;
+  transition:background var(--t),color var(--t);
+  min-height:100vh; position:relative;
+}
+body::before{
+  content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(90ch 70ch at 18% 8%, var(--bg2), transparent 62%),
+    radial-gradient(70ch 60ch at 88% 72%, var(--accent-soft), transparent 60%),
+    linear-gradient(180deg,var(--bg0),var(--bg1) 55%,var(--bg0));
+  opacity:.9; transition:background var(--t);
+}
+body.awakened::before{background:
+    radial-gradient(70ch 55ch at 50% 42%, rgba(245,201,107,.16), transparent 62%),
+    radial-gradient(90ch 70ch at 18% 8%, var(--bg2), transparent 62%),
+    radial-gradient(70ch 60ch at 88% 72%, var(--accent-soft), transparent 60%),
+    linear-gradient(180deg,var(--bg0),var(--bg1) 55%,var(--bg0))}
+#fx{position:fixed;inset:0;z-index:1;pointer-events:none}
+.wrap{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:0 22px}
+
+/* ---------- header ---------- */
+header{padding:clamp(38px,7vh,80px) 0 6px;text-align:center}
+.eyebrow{
+  font-size:11px;letter-spacing:.46em;text-transform:uppercase;color:var(--muted);
+  transition:color var(--t)
+}
+h1{
+  font-family:'Cormorant Garamond',serif;font-weight:300;
+  font-size:clamp(40px,7.4vw,84px);line-height:1;letter-spacing:.01em;
+  margin:14px 0 10px;
+}
+h1 .em{font-style:italic;color:var(--accent);transition:color var(--t)}
+.date{
+  font-size:clamp(11px,2.4vw,13px);letter-spacing:.34em;text-transform:uppercase;
+  color:var(--muted);transition:color var(--t)
+}
+
+/* ---------- stage ---------- */
+.stage{position:relative;margin:min(2vh,18px) auto 0;max-width:1000px}
+#scene{width:100%;height:auto;display:block;overflow:visible;touch-action:pan-y;will-change:transform}
+#buddha,#halo{will-change:transform,opacity}
+.hint{
+  position:absolute;left:50%;bottom:2%;transform:translateX(-50%);
+  display:flex;align-items:center;gap:10px;
+  font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#cfe9dd;
+  background:rgba(0,0,0,.4);border:1px solid rgba(61,220,151,.45);border-radius:99px;
+  padding:10px 22px;backdrop-filter:blur(8px);white-space:nowrap;
+  animation:breathe 3.2s ease-in-out infinite;transition:opacity .6s,color var(--t),border-color var(--t)
+}
+body.awakened .hint{opacity:0;pointer-events:none;animation:none}
+@keyframes breathe{0%,100%{opacity:.55;transform:translateX(-50%) translateY(0)}50%{opacity:1;transform:translateX(-50%) translateY(-4px)}}
+
+/* ---------- dark figure pieces ---------- */
+#dark{transform-box:view-box;transform-origin:500px 400px}
+#dark .piece{transform-box:fill-box;transform-origin:50% 50%}
+.t-run #dark .piece{animation:shatter var(--dur,1.05s) cubic-bezier(.12,.72,.24,1) forwards;animation-delay:var(--d,0s);will-change:transform,opacity}
+@keyframes shatter{
+  0%{opacity:1}
+  12%{transform:translate(calc(var(--tx)*-.10),calc(var(--ty)*-.10)) rotate(calc(var(--r)*-.08))}
+  58%{opacity:1}
+  100%{transform:translate(var(--tx),var(--ty)) rotate(var(--r)) scale(.42);opacity:0}
+}
+#helmet{transform-box:fill-box;transform-origin:50% 50%}
+.t-run #helmet{animation:helmetOff 1.35s cubic-bezier(.14,.76,.26,1) .40s forwards}
+@keyframes helmetOff{
+  0%{opacity:1}
+  22%{transform:translate(4px,-26px) rotate(-7deg)}
+  60%{opacity:1}
+  100%{transform:translate(196px,-330px) rotate(-58deg) scale(.5);opacity:0}
+}
+#darkAura{animation:auraPulse 3.6s ease-in-out infinite}
+@keyframes auraPulse{0%,100%{opacity:.32}50%{opacity:.62}}
+#breath{animation:breath 4.4s ease-in-out infinite;transform-box:view-box;transform-origin:500px 520px}
+@keyframes breath{0%,100%{transform:scale(1)}50%{transform:scale(1.013)}}
+.t-run #breath{animation:none}
+#breath.hit{animation:impact 240ms cubic-bezier(.3,0,.15,1) both}
+@keyframes impact{0%{transform:scale(1)}42%{transform:scale(.958) translateY(6px)}100%{transform:scale(1)}}
+.eyeGlow{animation:blinkRed 5.5s ease-in-out infinite}
+@keyframes blinkRed{0%,88%,100%{opacity:.95}92%{opacity:.25}}
+.led{animation:led 2.1s steps(2,end) infinite}
+.led.b{animation-duration:3.3s}
+@keyframes led{0%,49%{opacity:1}50%,100%{opacity:.2}}
+
+/* ---------- buddha ---------- */
+#buddha{opacity:0;transform-box:fill-box;transform-origin:50% 100%}
+.t-run #buddha{animation:rise 1.25s cubic-bezier(.18,.86,.24,1) .95s forwards}
+@keyframes rise{0%{opacity:0;transform:translateY(34px) scale(.9)}55%{opacity:1}100%{opacity:1;transform:translateY(0) scale(1.13)}}
+#halo{transform-box:view-box;transform-origin:500px 300px}
+.t-run #halo{animation:haloIn 1.4s cubic-bezier(.16,1,.3,1) 1.25s forwards}
+#haloSpin{transform-box:view-box;transform-origin:500px 300px}
+.t-run #haloSpin{animation:spin 60s linear 1.25s infinite}
+@keyframes haloIn{0%{opacity:0;transform:scale(.34)}70%{opacity:1}100%{opacity:1;transform:scale(1)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.t-run #lotus{animation:bloom 1s cubic-bezier(.22,1.28,.36,1) .78s backwards}
+@keyframes bloom{0%{transform:scaleX(.22) scaleY(.34)}100%{transform:none}}
+#lotus{transform-box:fill-box;transform-origin:50% 100%}
+#buddhaBreath{transform-box:fill-box;transform-origin:50% 100%;animation:breath 6s ease-in-out infinite}
+#jadeChest{animation:jadeGlow 3.4s ease-in-out infinite}
+@keyframes jadeGlow{0%,100%{opacity:.55}50%{opacity:1}}
+
+/* ---------- pendant ---------- */
+#pendantSwing{transform-box:view-box;transform-origin:830px 30px;animation:swing 4.6s ease-in-out infinite}
+@keyframes swing{0%,100%{transform:rotate(6deg)}50%{transform:rotate(-6deg)}}
+#pendantSwing.grabbed{animation:none}
+.ping{transform-box:fill-box;transform-origin:center;animation:ping 2.4s ease-out infinite}
+@keyframes ping{0%{opacity:.85;transform:scale(1)}100%{opacity:0;transform:scale(2.3)}}
+#pendant{transition:filter .22s cubic-bezier(.3,0,.2,1)}
+#pendant:hover{filter:drop-shadow(0 0 16px rgba(124,243,189,.7))}
+#pendant.armed{filter:drop-shadow(0 0 24px rgba(124,243,189,.95))}
+#pendant.demo{animation:demo 1.7s cubic-bezier(.4,0,.3,1)}
+@keyframes demo{0%{transform:translate(830px,250px)}48%{transform:translate(640px,308px)}100%{transform:translate(830px,250px)}}
+#pendantHit{cursor:grab;fill:transparent;stroke:transparent;stroke-width:2.5;touch-action:none}
+#pendantHit:focus{outline:none}
+#pendantHit:focus-visible{stroke:#eafff4;stroke-dasharray:5 7}
+#pendant.armed #pendantHit{cursor:crosshair}
+#pendantSwing.grabbed #pendantHit{cursor:grabbing}
+.t-run #pendantSwing,.t-run #chain{opacity:0;transition:opacity .5s;pointer-events:none}
+#flash{opacity:0}
+.t-run #flash{animation:flash 1.05s cubic-bezier(.15,.8,.3,1) forwards}
+@keyframes flash{0%{opacity:1;transform:scale(.05)}40%{opacity:.75}100%{opacity:0;transform:scale(15)}}
+#flash{transform-box:view-box;transform-origin:500px 330px}
+
+/* ---------- message ---------- */
+.message{max-width:760px;margin:clamp(30px,6vh,64px) auto 0;text-align:center}
+.message p{
+  font-family:'Cormorant Garamond',serif;font-weight:300;
+  font-size:clamp(20px,3.2vw,30px);line-height:1.55;letter-spacing:.005em;
+  color:var(--ink);opacity:0;transform:translateY(22px);
+  transition:opacity .72s cubic-bezier(.33,0,.2,1),transform .82s cubic-bezier(.16,.84,.28,1),color var(--t);
+  margin-bottom:.55em
+}
+body.revealed .message p{opacity:.95;transform:none}
+body.revealed .message p:nth-child(1){transition-delay:0s}
+body.revealed .message p:nth-child(2){transition-delay:.16s}
+body.revealed .message p:nth-child(3){transition-delay:.32s}
+body.revealed .message p:nth-child(4){transition-delay:.48s}
+body.revealed .message p:nth-child(5){transition-delay:.64s}
+.message .sig{
+  font-size:clamp(13px,2.2vw,15px);letter-spacing:.22em;text-transform:uppercase;
+  font-family:'Manrope',sans-serif;color:var(--gold);margin-top:1.6em;
+  opacity:0;transition:opacity .9s .95s
+}
+body.revealed .message .sig{opacity:1}
+.jade-word{color:var(--jade);font-style:italic}
+.cue{font-size:18px;color:var(--muted);opacity:0;margin-top:26px;transition:opacity .8s 2.2s}
+body.revealed .cue{opacity:.55;animation:cueBob 2.4s ease-in-out infinite}
+body.scrolled .cue{opacity:0;animation:none}
+@keyframes cueBob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+/* ---------- cards ---------- */
+.cards-head{
+  text-align:center;margin-top:clamp(46px,9vh,96px);font-size:11px;letter-spacing:.32em;
+  text-transform:uppercase;color:var(--muted);transition:color var(--t)
+}
+.cards{
+  display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));
+  margin:22px auto clamp(40px,7vh,80px);max-width:1000px
+}
+.card{
+  position:relative;height:186px;perspective:1000px;cursor:pointer;
+  opacity:0;transform:translateY(22px);
+  transition:opacity .8s ease,transform .8s cubic-bezier(.2,.9,.3,1)
+}
+.card.in{opacity:1;transform:none}
+.card:focus{outline:none}
+.card:focus-visible .face{border-color:var(--jade);box-shadow:0 0 0 2px rgba(61,220,151,.35)}
+.card-inner{
+  position:relative;width:100%;height:100%;
+  transition:transform .8s cubic-bezier(.3,.9,.3,1);transform-style:preserve-3d
+}
+.card.flip .card-inner{transform:rotateY(180deg)}
+.face{
+  position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  border:1px solid var(--ring);border-radius:16px;padding:20px;
+  background:rgba(255,255,255,.035);backdrop-filter:blur(10px);
+  display:flex;flex-direction:column;justify-content:space-between;
+  transition:border-color var(--t),background var(--t)
+}
+.card:hover .face{border-color:var(--accent-soft)}
+.face.back{transform:rotateY(180deg);background:rgba(255,255,255,.06)}
+.glyph{font-size:26px;line-height:1;color:var(--accent);transition:color var(--t)}
+.card h3{
+  font-family:'Cormorant Garamond',serif;font-weight:500;font-size:23px;line-height:1.15;
+  letter-spacing:.01em
+}
+.card .sub,.card .body{font-size:13px;color:var(--muted);line-height:1.55;transition:color var(--t)}
+.card .body{font-size:13.5px;color:var(--ink);opacity:.86}
+.tap{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--jade);opacity:1}
+
+/* ---------- controls ---------- */
+.controls{
+  position:fixed;right:16px;top:calc(16px + env(safe-area-inset-top));z-index:10;
+  display:flex;gap:8px;align-items:center
+}
+.btn{
+  font-family:'Manrope',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);background:rgba(255,255,255,.05);border:1px solid var(--ring);
+  border-radius:99px;padding:12px 18px;min-height:44px;cursor:pointer;line-height:1;
+  transition:color var(--t),border-color var(--t),background var(--t);backdrop-filter:blur(8px)
+}
+.btn:hover{color:var(--ink);border-color:var(--accent-soft);background:rgba(255,255,255,.09);transition:color .2s,border-color .2s,background .2s}
+.btn[aria-pressed="true"]{color:var(--ink);border-color:var(--accent-soft)}
+footer{
+  text-align:center;padding:0 0 44px;font-size:11px;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--muted);opacity:.78;transition:color var(--t)
+}
+.replay{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .8s 2.4s}
+body.revealed .replay{opacity:1;visibility:visible;pointer-events:auto}
+@media (max-width:640px){
+  .stage{margin-left:-22px;margin-right:-22px;width:calc(100% + 44px)}
+  .hint{font-size:10px;padding:8px 15px;letter-spacing:.14em}
+  .card{height:172px}
+  .controls{right:10px;top:10px;gap:6px}
+  .btn{padding:11px 14px;min-height:44px;font-size:10px}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.2s!important}
+  .card{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<canvas id="fx"></canvas>
+
+<div class="controls">
+  <button class="btn" id="langBtn" type="button">EN</button>
+  <button class="btn" id="soundBtn" type="button" aria-pressed="false" data-aria-ru="звук" data-aria-en="sound">♪̸</button>
+  <button class="btn replay" id="replayBtn" type="button" data-ru="ещё раз" data-en="again">ещё раз</button>
+</div>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow" data-ru="Двадцать третье августа" data-en="The twenty-third of August">Двадцать третье августа</div>
+  <h1><span data-ru="Владимир" data-en="Vladimir">Владимир</span> <span class="em" data-ru="Олениченко" data-en="Olenicenko">Олениченко</span></h1>
+  <div class="date" data-ru="Лев ⟶ Дева · нефрит · сердце" data-en="Leo ⟶ Virgo · jade · the heart">Лев ⟶ Дева · нефрит · сердце</div>
+</header>
+
+<div class="stage">
+<svg id="scene" viewBox="0 0 1000 640" role="img"
+     data-aria-ru="Тёмный рыцарь в звёздном поле и нефритовый кулон на цепочке. Перетащи кулон на рыцаря."
+     data-aria-en="A dark armoured knight in a starfield and a jade pendant on a chain. Drag the pendant onto him."
+     aria-label="Тёмный рыцарь в звёздном поле и нефритовый кулон на цепочке. Перетащи кулон на рыцаря.">
+<defs>
+  <linearGradient id="gArmor" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#39405e"/><stop offset=".55" stop-color="#1a1e30"/><stop offset="1" stop-color="#070912"/>
+  </linearGradient>
+  <linearGradient id="gCape" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#1c2037"/><stop offset="1" stop-color="#04050b"/>
+  </linearGradient>
+  <linearGradient id="gHelm" x1=".2" y1="0" x2=".8" y2="1">
+    <stop offset="0" stop-color="#4a5274"/><stop offset=".45" stop-color="#232941"/><stop offset="1" stop-color="#0a0c15"/>
+  </linearGradient>
+  <radialGradient id="gLens" cx=".35" cy=".3" r=".9">
+    <stop offset="0" stop-color="#ff8a76"/><stop offset=".45" stop-color="#e8231a"/><stop offset="1" stop-color="#5c0a08"/>
+  </radialGradient>
+  <radialGradient id="gJade" cx=".34" cy=".28" r=".85">
+    <stop offset="0" stop-color="#d7ffe9"/><stop offset=".38" stop-color="#5fe3a6"/><stop offset="1" stop-color="#0f7a52"/>
+  </radialGradient>
+  <radialGradient id="gSkin" cx=".38" cy=".3" r=".85">
+    <stop offset="0" stop-color="#ffeec2"/><stop offset=".55" stop-color="#f2c675"/><stop offset="1" stop-color="#d99a3f"/>
+  </radialGradient>
+  <linearGradient id="gRobe" x1=".1" y1="0" x2=".9" y2="1">
+    <stop offset="0" stop-color="#ffc86e"/><stop offset=".5" stop-color="#e2932f"/><stop offset="1" stop-color="#9c5c15"/>
+  </linearGradient>
+  <linearGradient id="gRobe2" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#ffe4a6"/><stop offset="1" stop-color="#e6a63f"/>
+  </linearGradient>
+  <linearGradient id="gLotus" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ffc8dd"/><stop offset="1" stop-color="#c1568f"/>
+  </linearGradient>
+  <linearGradient id="gHalo" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#f5c96b"/><stop offset=".5" stop-color="#3ddc97"/><stop offset="1" stop-color="#f5c96b"/>
+  </linearGradient>
+  <radialGradient id="gGlowRed" cx=".5" cy=".5" r=".5">
+    <stop offset="0" stop-color="#ff2a1e" stop-opacity=".55"/><stop offset="1" stop-color="#ff2a1e" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="gGlowJade" cx=".5" cy=".5" r=".5">
+    <stop offset="0" stop-color="#7cf3bd" stop-opacity=".6"/><stop offset=".55" stop-color="#f5c96b" stop-opacity=".18"/><stop offset="1" stop-color="#f5c96b" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="gShadow" cx=".5" cy=".5" r=".5">
+    <stop offset="0" stop-color="#000" stop-opacity=".62"/><stop offset="1" stop-color="#000" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="gFlash" cx=".5" cy=".5" r=".5">
+    <stop offset="0" stop-color="#ffffff" stop-opacity="1"/><stop offset=".4" stop-color="#dfffef" stop-opacity=".8"/><stop offset="1" stop-color="#7cf3bd" stop-opacity="0"/>
+  </radialGradient>
+  <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+    <feGaussianBlur stdDeviation="10"/>
+  </filter>
+  <filter id="soft2" x="-60%" y="-60%" width="220%" height="220%">
+    <feGaussianBlur stdDeviation="3.4"/>
+  </filter>
+</defs>
+
+<ellipse cx="500" cy="524" rx="182" ry="30" fill="url(#gShadow)"/>
+<ellipse id="darkAura" cx="500" cy="380" rx="200" ry="215" fill="url(#gGlowRed)"/>
+<ellipse id="jadeAura" cx="500" cy="360" rx="300" ry="312" fill="url(#gGlowJade)" opacity="0"/>
+
+<g id="breath">
+<g id="dark" transform="translate(500,520)">
+  <path class="piece" style="--tx:-304px;--ty:96px;--r:-26deg;--d:.24s;--dur:1.25s"
+        d="M-96,-272 C-168,-170 -196,-40 -160,10 L-104,8 C-116,-62 -104,-176 -64,-246 Z" fill="url(#gCape)" stroke="#5d68a0" stroke-width="2" stroke-opacity=".45"/>
+  <path class="piece" style="--tx:304px;--ty:96px;--r:26deg;--d:.24s;--dur:1.25s"
+        d="M96,-272 C168,-170 196,-40 160,10 L104,8 C116,-62 104,-176 64,-246 Z" fill="url(#gCape)" stroke="#5d68a0" stroke-width="2" stroke-opacity=".45"/>
+  <path class="piece" style="--tx:0px;--ty:192px;--r:0deg;--d:.26s;--dur:1.25s"
+        d="M-70,-236 C-96,-150 -100,-50 -86,6 L86,6 C100,-50 96,-150 70,-236 Z" fill="#0a0c16" opacity=".92"/>
+  <path class="piece" style="--tx:-154px;--ty:176px;--r:-18deg;--d:.30s;--dur:1.1s" d="M-48,-124 L-12,-124 L-17,-12 L-54,-12 Z" fill="url(#gArmor)"/>
+  <path class="piece" style="--tx:154px;--ty:176px;--r:18deg;--d:.30s;--dur:1.1s" d="M48,-124 L12,-124 L17,-12 L54,-12 Z" fill="url(#gArmor)"/>
+  <rect class="piece" style="--tx:-192px;--ty:208px;--r:-24deg;--d:.36s;--dur:1.05s" x="-60" y="-16" width="52" height="18" rx="5" fill="#0c0e18"/>
+  <rect class="piece" style="--tx:192px;--ty:208px;--r:24deg;--d:.36s;--dur:1.05s" x="8" y="-16" width="52" height="18" rx="5" fill="#0c0e18"/>
+  <path class="piece" style="--tx:0px;--ty:-64px;--r:6deg;--d:.19s;--dur:1.1s" d="M-64,-240 L64,-240 L50,-120 L-50,-120 Z" fill="url(#gArmor)" stroke="#5d68a0" stroke-width="1.8" stroke-opacity=".4"/>
+  <path class="piece" style="--tx:0px;--ty:-64px;--r:6deg;--d:.19s;--dur:1.1s" d="M-64,-240 L0,-240 L0,-120 L-50,-120 Z" fill="#000" opacity=".18"/>
+  <g class="piece" style="--tx:0px;--ty:240px;--r:-10deg;--d:.05s;--dur:.92s">
+    <rect x="-56" y="-128" width="112" height="20" rx="5" fill="#101321"/>
+    <rect x="-12" y="-126" width="24" height="16" rx="3" fill="#2a3150"/>
+    <circle cx="-32" cy="-118" r="4" fill="#e8231a" opacity=".8"/>
+    <circle cx="32" cy="-118" r="4" fill="#e8231a" opacity=".8"/>
+  </g>
+  <g class="piece" style="--tx:-48px;--ty:-192px;--r:-14deg;--d:0s;--dur:.86s">
+    <rect x="-30" y="-214" width="60" height="48" rx="7" fill="#0e1120" stroke="#4b537a" stroke-width="2"/>
+    <rect class="led" x="-22" y="-206" width="13" height="9" rx="2" fill="#e8231a"/>
+    <rect class="led b" x="-4" y="-206" width="13" height="9" rx="2" fill="#f5c96b"/>
+    <rect x="14" y="-206" width="9" height="9" rx="2" fill="#2a3150"/>
+    <rect x="-22" y="-190" width="44" height="4" rx="2" fill="#2a3150"/>
+    <rect x="-22" y="-182" width="30" height="4" rx="2" fill="#2a3150"/>
+  </g>
+  <path class="piece" style="--tx:-256px;--ty:-144px;--r:-40deg;--d:.11s;--dur:1.0s" d="M-64,-248 Q-100,-244 -94,-206 L-64,-216 Z" fill="url(#gArmor)" stroke="#5d68a0" stroke-width="1.8" stroke-opacity=".45"/>
+  <path class="piece" style="--tx:256px;--ty:-144px;--r:40deg;--d:.11s;--dur:1.0s" d="M64,-248 Q100,-244 94,-206 L64,-216 Z" fill="url(#gArmor)" stroke="#5d68a0" stroke-width="1.8" stroke-opacity=".45"/>
+  <g class="piece selfpivot" style="--tx:-304px;--ty:32px;--r:-34deg;--d:.15s;--dur:1.05s">
+    <path d="M-72,-234 Q-96,-192 -88,-140 L-60,-146 Q-68,-192 -54,-228 Z" fill="url(#gArmor)"/>
+    <ellipse cx="-76" cy="-134" rx="16" ry="18" fill="#0c0e18"/>
+  </g>
+  <g class="piece selfpivot" style="--tx:304px;--ty:32px;--r:34deg;--d:.15s;--dur:1.05s">
+    <path d="M72,-234 Q96,-192 88,-140 L60,-146 Q68,-192 54,-228 Z" fill="url(#gArmor)"/>
+    <ellipse cx="76" cy="-134" rx="16" ry="18" fill="#0c0e18"/>
+  </g>
+  <rect class="piece" style="--tx:0px;--ty:-144px;--r:0deg;--d:.40s;--dur:.9s" x="-17" y="-258" width="34" height="26" fill="#0a0c14"/>
+  <g transform="translate(0,-262)"><g id="helmet">
+    <path d="M-58,14 C-58,-42 -34,-72 0,-72 C34,-72 58,-42 58,14 Z" fill="url(#gHelm)" stroke="#5d68a0" stroke-width="1.6" stroke-opacity=".5"/>
+    <path d="M-58,-4 L-80,30 L-56,34 Z" fill="url(#gHelm)"/>
+    <path d="M58,-4 L80,30 L56,34 Z" fill="url(#gHelm)"/>
+    <path d="M-34,-56 C-22,-64 -6,-66 4,-62 C-10,-62 -24,-58 -34,-56 Z" fill="#8f9dc4" opacity=".5"/>
+    <path d="M-56,12 L56,12 L46,46 L-46,46 Z" fill="#171b2c"/>
+    <path d="M-46,2 L46,2 L38,18 L-38,18 Z" fill="#0b0d17"/>
+    <path class="eyeGlow" d="M-40,4 L-13,-1 L-9,15 L-36,19 Z" fill="url(#gLens)"/>
+    <path class="eyeGlow" d="M40,4 L13,-1 L9,15 L36,19 Z" fill="url(#gLens)"/>
+    <path d="M-38,5 L-16,1 L-15,6 L-37,10 Z" fill="#fff" opacity=".28"/>
+    <rect x="-21" y="22" width="42" height="16" rx="4" fill="#05070d"/>
+    <g stroke="#3b4468" stroke-width="2">
+      <line x1="-13" y1="24" x2="-13" y2="36"/><line x1="-4" y1="24" x2="-4" y2="36"/>
+      <line x1="5" y1="24" x2="5" y2="36"/><line x1="14" y1="24" x2="14" y2="36"/>
+    </g>
+    <rect x="-46" y="20" width="16" height="12" rx="3" fill="#12162a"/>
+    <rect x="30" y="20" width="16" height="12" rx="3" fill="#12162a"/>
+    <path d="M-6,-66 L6,-66 L4,-40 L-4,-40 Z" fill="#0d1020" opacity=".7"/>
+  </g></g>
+</g>
+</g>
+
+<g id="halo" opacity="0"><g id="haloSpin">
+  <circle cx="500" cy="300" r="196" fill="url(#gGlowJade)" filter="url(#soft)"/>
+  <circle cx="500" cy="300" r="134" fill="none" stroke="url(#gHalo)" stroke-width="2.2" opacity=".65"/>
+  <circle cx="500" cy="300" r="162" fill="none" stroke="url(#gHalo)" stroke-width="1.2" opacity=".4" stroke-dasharray="3 11"/>
+  <circle cx="500" cy="300" r="114" fill="none" stroke="#fff" stroke-width=".8" opacity=".18"/>
+</g></g>
+
+<g transform="translate(500,528)"><g id="buddha">
+  <g id="lotus">
+    <ellipse cx="-108" cy="-4" rx="46" ry="17" fill="url(#gLotus)" opacity=".75" transform="rotate(-16 -108 -4)"/>
+    <ellipse cx="108" cy="-4" rx="46" ry="17" fill="url(#gLotus)" opacity=".75" transform="rotate(16 108 -4)"/>
+    <ellipse cx="-62" cy="4" rx="48" ry="19" fill="url(#gLotus)" opacity=".9" transform="rotate(-8 -62 4)"/>
+    <ellipse cx="62" cy="4" rx="48" ry="19" fill="url(#gLotus)" opacity=".9" transform="rotate(8 62 4)"/>
+    <ellipse cx="0" cy="8" rx="56" ry="21" fill="url(#gLotus)"/>
+    <ellipse cx="-34" cy="-12" rx="40" ry="15" fill="#ffd9e8" opacity=".55"/>
+    <ellipse cx="34" cy="-12" rx="40" ry="15" fill="#ffd9e8" opacity=".55"/>
+  </g>
+  <g id="buddhaBreath">
+    <path d="M-92,-10 Q0,-52 92,-10 Q0,30 -92,-10 Z" fill="url(#gRobe)"/>
+    <path d="M-66,-14 Q0,-40 66,-14 Q0,6 -66,-14 Z" fill="url(#gRobe2)" opacity=".55"/>
+    <path d="M-74,-16 Q-70,-120 0,-138 Q70,-120 74,-16 Z" fill="url(#gRobe)"/>
+    <path d="M-74,-16 Q-70,-120 0,-138 Q-24,-70 -30,-16 Z" fill="#fff" opacity=".08"/>
+    <path d="M-36,-136 Q0,-86 36,-136 Q0,-114 -36,-136 Z" fill="url(#gSkin)"/>
+    <path d="M32,-134 C54,-96 50,-56 44,-22 L26,-24 C34,-58 38,-96 20,-128 Z" fill="url(#gRobe2)" opacity=".85"/>
+    <path d="M-70,-116 C-98,-86 -92,-50 -46,-38 C-64,-62 -62,-90 -52,-114 Z" fill="url(#gRobe)"/>
+    <path d="M70,-116 C98,-86 92,-50 46,-38 C64,-62 62,-90 52,-114 Z" fill="url(#gRobe)"/>
+    <ellipse cx="0" cy="-46" rx="34" ry="14" fill="url(#gSkin)"/>
+    <ellipse cx="0" cy="-54" rx="24" ry="10" fill="url(#gSkin)"/>
+    <g fill="none" stroke="#c78f3c" stroke-width="1.8" stroke-linecap="round" opacity=".7">
+      <path d="M-22,-44 Q-12,-38 -2,-42"/><path d="M22,-44 Q12,-38 2,-42"/>
+    </g>
+    <circle cx="0" cy="-62" r="9" fill="#7cf3bd" opacity=".85" filter="url(#soft2)"/>
+    <rect x="-15" y="-166" width="30" height="26" fill="#e0a94e"/>
+    <g id="jadeChest">
+      <path d="M-26,-152 Q0,-124 26,-152" fill="none" stroke="#c8b48a" stroke-width="2"/>
+      <circle cx="0" cy="-118" r="26" fill="#7cf3bd" opacity=".35" filter="url(#soft2)"/>
+      <circle cx="0" cy="-118" r="15" fill="url(#gJade)"/>
+      <circle cx="0" cy="-118" r="6" fill="#04160f" opacity=".55"/>
+      <circle cx="-5" cy="-124" r="4" fill="#fff" opacity=".55"/>
+    </g>
+    <ellipse cx="-46" cy="-198" rx="9" ry="24" fill="url(#gSkin)"/>
+    <ellipse cx="46" cy="-198" rx="9" ry="24" fill="url(#gSkin)"/>
+    <ellipse cx="0" cy="-202" rx="45" ry="49" fill="url(#gSkin)"/>
+    <path d="M-45,-208 Q-42,-256 0,-258 Q42,-256 45,-208 Q22,-228 0,-226 Q-22,-228 -45,-208 Z" fill="#2a2440"/>
+    <ellipse cx="0" cy="-260" rx="21" ry="17" fill="#2a2440"/>
+    <circle cx="0" cy="-276" r="6" fill="#f5c96b"/>
+    <g fill="#3b3358">
+      <circle cx="-30" cy="-234" r="6"/><circle cx="-14" cy="-244" r="6"/>
+      <circle cx="2" cy="-247" r="6"/><circle cx="18" cy="-243" r="6"/><circle cx="32" cy="-233" r="6"/>
+    </g>
+    <g fill="none" stroke="#8a5a24" stroke-width="2.6" stroke-linecap="round">
+      <path d="M-27,-206 Q-17,-197 -7,-206"/>
+      <path d="M27,-206 Q17,-197 7,-206"/>
+      <path d="M-14,-176 Q0,-167 14,-176"/>
+    </g>
+    <g fill="none" stroke="#c78f3c" stroke-width="2" stroke-linecap="round" opacity=".8">
+      <path d="M-30,-216 Q-18,-222 -6,-216"/>
+      <path d="M30,-216 Q18,-222 6,-216"/>
+    </g>
+    <circle cx="0" cy="-220" r="4" fill="#f5c96b"/>
+    <ellipse cx="-20" cy="-186" rx="9" ry="5" fill="#ff9bb3" opacity=".35"/>
+    <ellipse cx="20" cy="-186" rx="9" ry="5" fill="#ff9bb3" opacity=".35"/>
+  </g>
+</g></g>
+
+<circle id="flash" cx="500" cy="330" r="10" fill="url(#gFlash)"/>
+
+<line id="chain" x1="830" y1="0" x2="830" y2="250" stroke="#c8b48a" stroke-width="1.6" opacity=".55"/>
+<g id="pendantSwing">
+  <g id="pendant" transform="translate(830,250)">
+    <circle cx="0" cy="0" r="52" fill="#7cf3bd" opacity=".22" filter="url(#soft2)"/>
+    <circle class="ping" cx="0" cy="0" r="30" fill="none" stroke="#7cf3bd" stroke-width="1.5"/>
+    <circle cx="0" cy="-26" r="7" fill="none" stroke="#c8b48a" stroke-width="2.4"/>
+    <circle cx="0" cy="0" r="26" fill="url(#gJade)"/>
+    <circle cx="0" cy="0" r="10" fill="#04160f" opacity=".5"/>
+    <circle cx="-9" cy="-10" r="7" fill="#fff" opacity=".5"/>
+    <circle cx="0" cy="0" r="26" fill="none" stroke="#eafff4" stroke-width="1" opacity=".45"/>
+    <circle id="pendantHit" cx="0" cy="0" r="72" fill="transparent" tabindex="0" role="button" aria-label="Перетащи нефритовый кулон на рыцаря"/>
+  </g>
+</g>
+</svg>
+<div class="hint" id="hint" data-ru="Перетащи нефрит на него" data-en="Drag the jade onto him">Перетащи нефрит на него</div>
+</div>
+
+<section class="message" id="message">
+  <p data-ru="С днём рождения, Владимир." data-en="Happy birthday, Vladimir.">С днём рождения, Владимир.</p>
+  <p data-ru="Пусть броня, которую мы все зачем-то носим, снимется легко — и окажется, что под ней всегда был свет." data-en="May the armour we all wear for some reason come off easily — and may it turn out the light was always underneath.">Пусть броня, которую мы все зачем-то носим, снимется легко — и окажется, что под ней всегда был свет.</p>
+  <p data-ru="Пусть этот год принесёт много проектов в AI — тех самых, что продолжают расти, пока ты спишь." data-en="May this year bring many projects in AI — the kind that keep growing while you sleep.">Пусть этот год принесёт много проектов в AI — тех самых, что продолжают расти, пока ты спишь.</p>
+  <p data-ru="Пусть рядом всегда будет Алина, и пусть любви будет больше, чем планов." data-en="May Alina always be beside you, and may there be more love than plans.">Пусть рядом всегда будет Алина, и пусть любви будет больше, чем планов.</p>
+  <p data-ru="И пусть всё случится именно так, как должно случиться." data-en="And may everything happen exactly the way it is meant to.">И пусть всё случится именно так, как должно случиться.</p>
+  <div class="sig" data-ru="23 · 08 · с любовью, семья" data-en="23 · 08 · with love, family">23 · 08 · с любовью, семья</div>
+  <div class="cue" id="cue" aria-hidden="true">&#8595;</div>
+</section>
+
+<div class="cards-head" data-ru="о тебе" data-en="about you">о тебе</div>
+<section class="cards" id="cards">
+  <div class="card"><div class="card-inner">
+    <div class="face">
+      <div class="glyph">☀</div>
+      <div>
+        <h3 data-ru="Лев ⟶ Дева" data-en="Leo ⟶ Virgo">Лев ⟶ Дева</h3>
+        <div class="sub" data-ru="23 августа — грань огня и земли" data-en="23 August — the edge of fire and earth">23 августа — грань огня и земли</div>
+      </div>
+      <div class="tap" data-ru="нажми" data-en="tap">нажми</div>
+    </div>
+    <div class="face back">
+      <div class="glyph">☀</div>
+      <div class="body" data-ru="Рождённый на самой границе: сила и щедрость Льва, точность и терпение Девы. Такие люди умеют одновременно гореть и доводить до конца." data-en="Born right on the border: the force and generosity of Leo, the precision and patience of Virgo. People like this can burn and still finish what they started.">Рождённый на самой границе: сила и щедрость Льва, точность и терпение Девы. Такие люди умеют одновременно гореть и доводить до конца.</div>
+      <div class="tap" data-ru="назад" data-en="back">назад</div>
+    </div>
+  </div></div>
+
+  <div class="card"><div class="card-inner">
+    <div class="face">
+      <div class="glyph">✦</div>
+      <div>
+        <h3 data-ru="23 ⟶ 5" data-en="23 ⟶ 5">23 ⟶ 5</h3>
+        <div class="sub" data-ru="число движения и свободы" data-en="the number of movement and freedom">число движения и свободы</div>
+      </div>
+      <div class="tap" data-ru="нажми" data-en="tap">нажми</div>
+    </div>
+    <div class="face back">
+      <div class="glyph">✦</div>
+      <div class="body" data-ru="2 + 3 = 5. Пятёрка не сидит на месте: она пробует, ломает шаблон и идёт дальше. Всё новое даётся ей легче, чем всем остальным." data-en="2 + 3 = 5. The five never sits still: it experiments, breaks the pattern and moves on. Everything new comes easier to it than to anyone else.">2 + 3 = 5. Пятёрка не сидит на месте: она пробует, ломает шаблон и идёт дальше. Всё новое даётся ей легче, чем всем остальным.</div>
+      <div class="tap" data-ru="назад" data-en="back">назад</div>
+    </div>
+  </div></div>
+
+  <div class="card"><div class="card-inner">
+    <div class="face">
+      <div class="glyph">☘</div>
+      <div>
+        <h3 data-ru="Нефрит · Анахата" data-en="Jade · Anahata">Нефрит · Анахата</h3>
+        <div class="sub" data-ru="зелёный камень сердца" data-en="the green stone of the heart">зелёный камень сердца</div>
+      </div>
+      <div class="tap" data-ru="нажми" data-en="tap">нажми</div>
+    </div>
+    <div class="face back">
+      <div class="glyph">☘</div>
+      <div class="body" data-ru="Нефрит — камень сердечного центра. Он не добавляет ещё один слой защиты: он растворяет ту броню, которая уже есть." data-en="Jade is the stone of the heart centre. It does not add another layer of protection: it dissolves the armour that is already there.">Нефрит — камень сердечного центра. Он не добавляет ещё один слой защиты: он растворяет ту броню, которая уже есть.</div>
+      <div class="tap" data-ru="назад" data-en="back">назад</div>
+    </div>
+  </div></div>
+
+  <div class="card"><div class="card-inner">
+    <div class="face">
+      <div class="glyph">☸</div>
+      <div>
+        <h3 data-ru="Сатурн ⟶ Будда" data-en="Saturn ⟶ Buddha">Сатурн ⟶ Будда</h3>
+        <div class="sub" data-ru="броня, ставшая покоем" data-en="armour that became stillness">броня, ставшая покоем</div>
+      </div>
+      <div class="tap" data-ru="нажми" data-en="tap">нажми</div>
+    </div>
+    <div class="face back">
+      <div class="glyph">☸</div>
+      <div class="body" data-ru="Броня — это Сатурн: когда-то она держала и спасала. Но всё, что держит, однажды становится тем, что мешает. Снять её — не слабость, а следующий уровень силы." data-en="Armour is Saturn: it once held you together. But everything that holds you eventually becomes what holds you back. Taking it off is not weakness — it is the next level of strength.">Броня — это Сатурн: когда-то она держала и спасала. Но всё, что держит, однажды становится тем, что мешает. Снять её — не слабость, а следующий уровень силы.</div>
+      <div class="tap" data-ru="назад" data-en="back">назад</div>
+    </div>
+  </div></div>
+</section>
+
+<footer data-ru="сделано с любовью · 2026" data-en="made with love · 2026">сделано с любовью · 2026</footer>
+</div>
+
+<script>
+(function(){
+"use strict";
+var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------------- language ---------------- */
+var lang = "ru";
+var langBtn = document.getElementById("langBtn");
+function applyLang(){
+  document.documentElement.lang = lang;
+  var nodes = document.querySelectorAll("[data-ru]");
+  for (var i=0;i<nodes.length;i++){
+    var t = nodes[i].getAttribute("data-" + lang);
+    if (t) nodes[i].textContent = t;
+  }
+  var ar = document.querySelectorAll("[data-aria-ru]");
+  for (var j=0;j<ar.length;j++){
+    var a = ar[j].getAttribute("data-aria-" + lang);
+    if (a) ar[j].setAttribute("aria-label", a);
+  }
+  langBtn.textContent = lang === "ru" ? "EN" : "RU";
+}
+langBtn.addEventListener("click", function(){ lang = lang === "ru" ? "en" : "ru"; applyLang(); });
+
+/* ---------------- canvas fx ---------------- */
+var cv = document.getElementById("fx"), ctx = cv.getContext("2d");
+var W=0,H=0,DPR=1, stars=[], parts=[], petals=[], shoot=null, petalsOn=false;
+function resize(){
+  DPR = Math.min(window.devicePixelRatio||1, 2);
+  W = window.innerWidth; H = window.innerHeight;
+  cv.width = W*DPR; cv.height = H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0);
+  buildStars();
+}
+function buildStars(){
+  stars = [];
+  var n = Math.round(Math.min(190, (W*H)/9000));
+  for (var i=0;i<n;i++){
+    stars.push({x:Math.random()*W, y:Math.random()*H*0.92, r:Math.random()*1.35+0.25,
+                a:Math.random()*0.6+0.2, s:Math.random()*0.018+0.004, p:Math.random()*6.28});
+  }
+}
+function burst(x,y){
+  for (var i=0;i<130;i++){
+    var ang = Math.random()*6.283, sp = Math.random()*7+1.4;
+    parts.push({x:x, y:y, vx:Math.cos(ang)*sp, vy:Math.sin(ang)*sp-1.1,
+      life:1, r:Math.random()*3.1+0.9,
+      c: i%3===0 ? "124,243,189" : (i%3===1 ? "245,201,107" : "255,255,255")});
+  }
+}
+function addPetal(){
+  petals.push({x:Math.random()*W, y:-20, vy:Math.random()*0.5+0.28,
+    sw:Math.random()*1.5+0.5, ph:Math.random()*6.28, w:Math.random()*7+5,
+    rot:Math.random()*6.28, vr:(Math.random()-0.5)*0.02,
+    c: Math.random()<0.5 ? "255,193,214" : (Math.random()<0.6 ? "245,201,107" : "124,243,189")});
+}
+var t=0;
+function frame(){
+  t += 0.016;
+  ctx.clearRect(0,0,W,H);
+  for (var i=0;i<stars.length;i++){
+    var s = stars[i];
+    var a = reduced ? s.a : s.a + Math.sin(t*60*s.s + s.p)*0.28;
+    if (a<0) a=0;
+    ctx.globalAlpha = a; ctx.fillStyle = "#ffffff";
+    ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,6.283); ctx.fill();
+  }
+  if (!reduced && !shoot && Math.random()<0.0018){
+    shoot = {x:Math.random()*W*0.7, y:Math.random()*H*0.35, vx:5.5, vy:2.2, life:1};
+  }
+  if (shoot){
+    ctx.globalAlpha = shoot.life*0.85; ctx.strokeStyle="#ffffff"; ctx.lineWidth=1.4;
+    ctx.beginPath(); ctx.moveTo(shoot.x, shoot.y);
+    ctx.lineTo(shoot.x-shoot.vx*11, shoot.y-shoot.vy*11); ctx.stroke();
+    shoot.x+=shoot.vx; shoot.y+=shoot.vy; shoot.life-=0.012;
+    if (shoot.life<=0) shoot=null;
+  }
+  for (var j=parts.length-1;j>=0;j--){
+    var p = parts[j];
+    p.x+=p.vx; p.y+=p.vy; p.vy+=0.055; p.vx*=0.987; p.vy*=0.987; p.life-=0.011;
+    if (p.life<=0){ parts.splice(j,1); continue; }
+    ctx.globalAlpha = Math.max(p.life,0);
+    ctx.fillStyle = "rgba("+p.c+",1)";
+    ctx.beginPath(); ctx.arc(p.x,p.y,p.r*p.life,0,6.283); ctx.fill();
+  }
+  if (petalsOn && !reduced && petals.length<70 && Math.random()<0.22) addPetal();
+  for (var k=petals.length-1;k>=0;k--){
+    var q = petals[k];
+    q.y += q.vy; q.ph += 0.014; q.x += Math.sin(q.ph)*q.sw*0.55; q.rot += q.vr;
+    if (q.y > H+30){ petals.splice(k,1); continue; }
+    ctx.globalAlpha = 0.62 * Math.min(1, q.y/180);
+    ctx.save(); ctx.translate(q.x,q.y); ctx.rotate(q.rot);
+    ctx.fillStyle = "rgba("+q.c+",1)";
+    ctx.beginPath(); ctx.ellipse(0,0,q.w,q.w*0.44,0,0,6.283); ctx.fill();
+    ctx.restore();
+  }
+  ctx.globalAlpha = 1;
+  requestAnimationFrame(frame);
+}
+window.addEventListener("resize", resize);
+resize(); requestAnimationFrame(frame);
+
+/* ---------------- sound (WebAudio, no assets) ---------------- */
+var AC = window.AudioContext || window.webkitAudioContext;
+var actx = null, soundOn = false, breathTimer = null, soundTouched = false;
+var soundBtn = document.getElementById("soundBtn");
+function ensureCtx(){ if (!actx && AC) actx = new AC(); if (actx && actx.state==="suspended") actx.resume(); return actx; }
+function gong(){
+  var a = ensureCtx(); if(!a || !soundOn) return;
+  var now = a.currentTime;
+  var freqs = [82.4, 123.5, 196, 261.6, 392];
+  for (var i=0;i<freqs.length;i++){
+    var o = a.createOscillator(), g = a.createGain();
+    o.type = i<2 ? "sine" : "triangle";
+    o.frequency.value = freqs[i]*(1 + (Math.random()-0.5)*0.004);
+    g.gain.setValueAtTime(0.0001, now);
+    g.gain.exponentialRampToValueAtTime(0.16/(i+1), now+0.02);
+    g.gain.exponentialRampToValueAtTime(0.0001, now + 5.5 - i*0.5);
+    o.connect(g); g.connect(a.destination); o.start(now); o.stop(now+6);
+  }
+}
+function chime(){
+  var a = ensureCtx(); if(!a || !soundOn) return;
+  var now = a.currentTime, f = [523.3, 659.3, 784, 1046.5];
+  for (var i=0;i<f.length;i++){
+    var o = a.createOscillator(), g = a.createGain();
+    o.type="sine"; o.frequency.value=f[i];
+    var st = now + i*0.16;
+    g.gain.setValueAtTime(0.0001, st);
+    g.gain.exponentialRampToValueAtTime(0.07, st+0.01);
+    g.gain.exponentialRampToValueAtTime(0.0001, st+1.8);
+    o.connect(g); g.connect(a.destination); o.start(st); o.stop(st+2);
+  }
+}
+function breathSound(){
+  var a = ensureCtx(); if(!a || !soundOn || state!=="idle") return;
+  var len = Math.floor(a.sampleRate*1.5);
+  var buf = a.createBuffer(1, len, a.sampleRate), d = buf.getChannelData(0);
+  for (var i=0;i<len;i++){
+    var env = Math.sin(Math.PI*i/len);
+    d[i] = (Math.random()*2-1) * env * env * 0.5;
+  }
+  var src = a.createBufferSource(); src.buffer = buf;
+  var f = a.createBiquadFilter(); f.type="bandpass"; f.frequency.value=430; f.Q.value=1.6;
+  var g = a.createGain(); g.gain.value = 0.13;
+  src.connect(f); f.connect(g); g.connect(a.destination); src.start();
+}
+function syncSoundBtn(){
+  soundBtn.setAttribute("aria-pressed", soundOn ? "true" : "false");
+  soundBtn.textContent = soundOn ? "\u266A" : "\u266A\u0338";
+}
+soundBtn.addEventListener("click", function(){
+  soundTouched = true;
+  soundOn = !soundOn;
+  syncSoundBtn();
+  if (soundOn){ ensureCtx(); if(!breathTimer){ breathSound(); breathTimer = setInterval(breathSound, 4400); } }
+  else if (breathTimer){ clearInterval(breathTimer); breathTimer = null; }
+});
+
+/* ---------------- pendant drag ---------------- */
+var svg = document.getElementById("scene");
+var pendant = document.getElementById("pendant");
+var swing = document.getElementById("pendantSwing");
+var chain = document.getElementById("chain");
+var jadeAura = document.getElementById("jadeAura");
+var hit = document.getElementById("pendantHit");
+var HOME = {x:830, y:250}, TARGET = {x:500, y:330};
+var pos = {x:HOME.x, y:HOME.y};
+var dragging = false, state = "idle", moved = false;
+
+function toSvg(e){
+  var p = svg.createSVGPoint();
+  p.x = e.clientX; p.y = e.clientY;
+  var m = svg.getScreenCTM();
+  return m ? p.matrixTransform(m.inverse()) : {x:pos.x, y:pos.y};
+}
+function place(x,y){
+  var d = Math.hypot(x-TARGET.x, y-TARGET.y);
+  var armed = dragging && d < 260;
+  if (armed){ x += (TARGET.x-x)*0.16; y += (TARGET.y-y)*0.16; }
+  pos.x = x; pos.y = y;
+  pendant.style.transform = "translate("+x+"px,"+y+"px)";
+  pendant.classList.toggle("armed", armed);
+  chain.setAttribute("x2", x); chain.setAttribute("y2", y);
+  var near = Math.max(0, 1 - d/300);
+  jadeAura.setAttribute("opacity", (near*0.9).toFixed(3));
+}
+function down(e){
+  if (state !== "idle") return;
+  clearTimeout(nudgeTimer); clearTimeout(autoTimer);
+  if (!soundTouched){ soundOn = true; ensureCtx(); syncSoundBtn(); }
+  dragging = true; moved = false;
+  swing.classList.add("grabbed");
+  pendant.style.transition = "none";
+  chain.setAttribute("x1", HOME.x); chain.setAttribute("y1", 0);
+  document.body.style.touchAction = "none";
+  try { hit.setPointerCapture(e.pointerId); } catch(err){}
+  e.preventDefault();
+}
+function move(e){
+  if (!dragging) return;
+  var p = toSvg(e);
+  if (Math.hypot(p.x-HOME.x, p.y-HOME.y) > 30) moved = true;
+  place(p.x, p.y);
+  e.preventDefault();
+}
+function up(){
+  if (!dragging) return;
+  dragging = false;
+  document.body.style.touchAction = "";
+  var d = Math.hypot(pos.x-TARGET.x, pos.y-TARGET.y);
+  if (d < 260 || !moved){ awaken(); }
+  else {
+    pendant.style.transition = "transform .7s cubic-bezier(.3,1.3,.4,1)";
+    place(HOME.x, HOME.y);
+    setHint("ближе к сердцу", "closer to his heart");
+    setTimeout(function(){ if (state==="idle") setHint(HINT_RU, HINT_EN); }, 1600);
+    setTimeout(function(){ if (state==="idle") swing.classList.remove("grabbed"); }, 720);
+    armNudges();
+  }
+}
+hit.addEventListener("pointerdown", down);
+window.addEventListener("pointermove", move, {passive:false});
+window.addEventListener("pointerup", up);
+window.addEventListener("pointercancel", up);
+hit.addEventListener("keydown", function(e){ if(e.key==="Enter"||e.key===" ") awaken(); });
+
+/* ---------------- the transformation ---------------- */
+var hint = document.getElementById("hint");
+var HINT_RU = hint.getAttribute("data-ru"), HINT_EN = hint.getAttribute("data-en");
+var nudgeTimer = null, autoTimer = null;
+function setHint(ru,en){
+  hint.setAttribute("data-ru", ru); hint.setAttribute("data-en", en);
+  hint.textContent = lang === "ru" ? ru : en;
+}
+function armNudges(){
+  clearTimeout(nudgeTimer); clearTimeout(autoTimer);
+  nudgeTimer = setTimeout(function(){
+    if (state !== "idle") return;
+    swing.classList.add("grabbed");
+    pendant.classList.add("demo");
+    setHint("Возьми нефрит пальцем и веди к нему", "Take the jade and pull it onto him");
+    setTimeout(function(){
+      pendant.classList.remove("demo");
+      if (state === "idle") swing.classList.remove("grabbed");
+    }, 1750);
+  }, 9000);
+  autoTimer = setTimeout(function(){ if (state === "idle") awaken(); }, 26000);
+}
+function awaken(){
+  if (state !== "idle") return;
+  clearTimeout(nudgeTimer); clearTimeout(autoTimer);
+  pendant.classList.remove("demo");
+  state = "awakening";
+  if (breathTimer){ clearInterval(breathTimer); breathTimer = null; }
+  pendant.style.transition = "transform .55s cubic-bezier(.3,1.4,.5,1)";
+  pendant.classList.remove("armed");
+  place(TARGET.x, TARGET.y);
+  document.getElementById("breath").classList.add("hit");
+  setTimeout(function(){
+    document.body.classList.add("awakened");
+    svg.parentNode.classList.add("t-run");
+    svg.classList.add("t-run");
+    document.getElementById("scene").ownerSVGElement;
+    var m = svg.getScreenCTM();
+    var p = svg.createSVGPoint(); p.x = TARGET.x; p.y = TARGET.y;
+    var sp = m ? p.matrixTransform(m) : {x:W/2, y:H/2};
+    burst(sp.x, sp.y);
+    gong();
+  }, 470);
+  setTimeout(function(){ petalsOn = true; chime(); }, 2100);
+  setTimeout(function(){
+    document.body.classList.add("revealed");
+    state = "done";
+    var m = document.getElementById("message");
+    window.scrollTo({top: Math.max(0, m.offsetTop - window.innerHeight*0.62), behavior:"smooth"});
+  }, 2500);
+}
+
+window.addEventListener("scroll", function(){
+  if (window.scrollY > 600) document.body.classList.add("scrolled");
+}, {passive:true});
+
+/* ---------------- cards ---------------- */
+var cards = document.querySelectorAll(".card");
+for (var c=0;c<cards.length;c++){
+  (function(card){
+    card.setAttribute("tabindex","0");
+    card.addEventListener("click", function(){ card.classList.toggle("flip"); });
+    card.addEventListener("keydown", function(e){
+      if (e.key==="Enter"||e.key===" "){ e.preventDefault(); card.classList.toggle("flip"); }
+    });
+  })(cards[c]);
+}
+if ("IntersectionObserver" in window){
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting){
+        var idx = Array.prototype.indexOf.call(cards, en.target);
+        setTimeout(function(){ en.target.classList.add("in"); }, idx*110);
+        io.unobserve(en.target);
+      }
+    });
+  }, {threshold:0.05, rootMargin:"0px 0px -8% 0px"});
+  for (var z=0;z<cards.length;z++) io.observe(cards[z]);
+  setTimeout(function(){ for(var q=0;q<cards.length;q++) cards[q].classList.add("in"); }, 3000);
+} else {
+  for (var y2=0;y2<cards.length;y2++) cards[y2].classList.add("in");
+}
+
+/* ---------------- parallax ---------------- */
+if (!reduced){
+  var px = 0, py = 0, pq = false;
+  window.addEventListener("pointermove", function(e){
+    if (dragging) return;
+    px = (e.clientX/window.innerWidth - 0.5); py = (e.clientY/window.innerHeight - 0.5);
+    if (pq) return;
+    pq = true;
+    requestAnimationFrame(function(){
+      pq = false;
+      svg.style.transform = "translate("+(px*10).toFixed(2)+"px,"+(py*7).toFixed(2)+"px)";
+    });
+  });
+}
+
+/* ---------------- replay ---------------- */
+document.getElementById("replayBtn").addEventListener("click", function(){
+  document.body.classList.remove("awakened","revealed");
+  svg.classList.remove("t-run");
+  svg.parentNode.classList.remove("t-run");
+  petalsOn = false; petals.length = 0;
+  document.getElementById("breath").classList.remove("hit");
+  pendant.classList.remove("armed");
+  pendant.style.transition = "none";
+  swing.classList.remove("grabbed");
+  chain.setAttribute("x1", HOME.x); chain.setAttribute("y1", 0);
+  place(HOME.x, HOME.y);
+  jadeAura.setAttribute("opacity", 0);
+  state = "idle";
+  setHint(HINT_RU, HINT_EN);
+  document.body.classList.remove("scrolled");
+  armNudges();
+  if (soundOn && !breathTimer){ breathTimer = setInterval(breathSound, 4400); }
+  window.scrollTo({top:0, behavior:"smooth"});
+});
+
+function fitScene(){
+  var narrow = window.matchMedia("(max-width:640px)").matches;
+  svg.setAttribute("viewBox", narrow ? "280 40 680 570" : "0 0 1000 640");
+}
+window.addEventListener("resize", fitScene);
+fitScene();
+applyLang();
+place(HOME.x, HOME.y);
+armNudges();
+})();
+</script>
+</body>
+</html>
