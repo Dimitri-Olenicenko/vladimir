@@ -252,6 +252,10 @@ body.revealed .replay{opacity:1;visibility:visible;pointer-events:auto}
 </head>
 <body>
 <canvas id="fx"></canvas>
+<audio id="track" loop preload="auto">
+  <source src="hermano.mp3" type="audio/mpeg">
+  <source src="hermano.m4a" type="audio/mp4">
+</audio>
 
 <div class="controls">
   <button class="btn" id="langBtn" type="button">EN</button>
@@ -892,6 +896,22 @@ function scheduleDarkLoop(){
   breathAt(t + 14.4*BEAT);
   darkTimer = setTimeout(scheduleDarkLoop, 16*BEAT*1000 - 120);
 }
+var trackEl = document.getElementById("track");
+var trackFade = null;
+function trackTo(target, ms, thenPause){
+  if (!trackEl) return;
+  if (trackFade) clearInterval(trackFade);
+  var from = trackEl.volume, steps = Math.max(1, Math.round(ms/50)), i = 0;
+  trackFade = setInterval(function(){
+    i++;
+    var v = from + (target - from) * (i/steps);
+    trackEl.volume = Math.min(1, Math.max(0, v));
+    if (i >= steps){
+      clearInterval(trackFade); trackFade = null;
+      if (thenPause){ try { trackEl.pause(); } catch(e){} }
+    }
+  }, 50);
+}
 var fanfarePlayed = false;
 /* opening fanfare: brass stabs, a lift, a held chord — cinematic, and ours */
 function fanfare(){
@@ -915,6 +935,14 @@ function fanfare(){
 }
 function startDark(){
   if (darkOn || !soundOn) return;
+  if (trackEl && trackEl.canPlayType && (trackEl.canPlayType("audio/mpeg") || trackEl.canPlayType("audio/mp4"))){
+    darkOn = true;
+    trackEl.volume = 0;
+    var pr = trackEl.play();
+    if (pr && pr.catch) pr.catch(function(){ darkOn = false; });
+    trackTo(0.85, 1100, false);
+    return;
+  }
   if (!ensureCtx()) return;
   darkOn = true;
   musicGain.gain.cancelScheduledValues(actx.currentTime);
@@ -930,6 +958,10 @@ function startDark(){
 }
 function stopDark(fade){
   darkOn = false;
+  if (trackEl && !trackEl.paused){
+    trackTo(0, Math.round((fade || 0.6)*1000), true);
+    return;
+  }
   if (darkTimer){ clearTimeout(darkTimer); darkTimer = null; }
   if (actx && musicGain){
     var now = actx.currentTime;
@@ -1227,6 +1259,7 @@ document.getElementById("replayBtn").addEventListener("click", function(){
   document.body.classList.remove("scrolled");
   armNudges();
   stopBright(0.3);
+  if (trackEl){ try { trackEl.currentTime = 0; } catch(e){} }
   if (soundOn && audioArmed) setTimeout(function(){ startDark(); }, 400);
   window.scrollTo({top:0, behavior:"smooth"});
 });
