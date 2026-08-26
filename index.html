@@ -139,7 +139,7 @@ body.awakened .hint{opacity:0;pointer-events:none;animation:none}
 #pendant:hover{filter:drop-shadow(0 0 16px rgba(124,243,189,.7))}
 #pendant.armed{filter:drop-shadow(0 0 24px rgba(124,243,189,.95))}
 #pendant.demo{animation:demo 1.7s cubic-bezier(.4,0,.3,1)}
-@keyframes demo{0%{transform:translate(830px,250px)}48%{transform:translate(640px,308px)}100%{transform:translate(830px,250px)}}
+@keyframes demo{0%{transform:translate(830px,250px)}48%{transform:translate(640px,286px)}100%{transform:translate(830px,250px)}}
 #pendantHit{cursor:grab;fill:transparent;stroke:transparent;stroke-width:2.5;touch-action:none}
 #pendantHit:focus{outline:none}
 #pendantHit:focus-visible{stroke:#eafff4;stroke-dasharray:5 7}
@@ -149,7 +149,7 @@ body.awakened .hint{opacity:0;pointer-events:none;animation:none}
 #flash{opacity:0}
 .t-run #flash{animation:flash 1.05s cubic-bezier(.15,.8,.3,1) forwards}
 @keyframes flash{0%{opacity:1;transform:scale(.05)}40%{opacity:.75}100%{opacity:0;transform:scale(15)}}
-#flash{transform-box:view-box;transform-origin:500px 330px}
+#flash{transform-box:view-box;transform-origin:500px 264px}
 
 /* ---------- message ---------- */
 .message{max-width:760px;margin:clamp(30px,6vh,64px) auto 0;text-align:center}
@@ -261,9 +261,8 @@ body.revealed .replay{opacity:1;visibility:visible;pointer-events:auto}
 
 <div class="wrap">
 <header>
-  <div class="eyebrow" data-ru="Двадцать третье августа" data-en="The twenty-third of August">Двадцать третье августа</div>
+  <div class="eyebrow" data-ru="XXIII · VIII" data-en="XXIII · VIII">XXIII · VIII</div>
   <h1><span data-ru="Владимир" data-en="Vladimir">Владимир</span> <span class="em" data-ru="Олениченко" data-en="Olenicenko">Олениченко</span></h1>
-  <div class="date" data-ru="Лев ⟶ Дева · нефрит · сердце" data-en="Leo ⟶ Virgo · jade · the heart">Лев ⟶ Дева · нефрит · сердце</div>
 </header>
 
 <div class="stage">
@@ -282,7 +281,7 @@ body.revealed .replay{opacity:1;visibility:visible;pointer-events:auto}
     <stop offset="0" stop-color="#4a5274"/><stop offset=".45" stop-color="#232941"/><stop offset="1" stop-color="#0a0c15"/>
   </linearGradient>
   <radialGradient id="gLens" cx=".35" cy=".3" r=".9">
-    <stop offset="0" stop-color="#ff8a76"/><stop offset=".45" stop-color="#e8231a"/><stop offset="1" stop-color="#5c0a08"/>
+    <stop offset="0" stop-color="#c2564a"/><stop offset=".42" stop-color="#6e1b16"/><stop offset="1" stop-color="#1c0605"/>
   </radialGradient>
   <radialGradient id="gJade" cx=".34" cy=".28" r=".85">
     <stop offset="0" stop-color="#d7ffe9"/><stop offset=".38" stop-color="#5fe3a6"/><stop offset="1" stop-color="#0f7a52"/>
@@ -323,66 +322,110 @@ body.revealed .replay{opacity:1;visibility:visible;pointer-events:auto}
 </defs>
 
 <ellipse cx="500" cy="524" rx="182" ry="30" fill="url(#gShadow)"/>
-<ellipse id="darkAura" cx="500" cy="380" rx="200" ry="215" fill="url(#gGlowRed)"/>
+<ellipse id="darkAura" cx="500" cy="330" rx="215" ry="235" fill="url(#gGlowRed)"/>
 <ellipse id="jadeAura" cx="500" cy="360" rx="300" ry="312" fill="url(#gGlowJade)" opacity="0"/>
 
 <g id="breath">
 <g id="dark" transform="translate(500,520)">
-  <path class="piece" style="--tx:-304px;--ty:96px;--r:-26deg;--d:.24s;--dur:1.25s"
-        d="M-96,-272 C-168,-170 -196,-40 -160,10 L-104,8 C-116,-62 -104,-176 -64,-246 Z" fill="url(#gCape)" stroke="#5d68a0" stroke-width="2" stroke-opacity=".45"/>
-  <path class="piece" style="--tx:304px;--ty:96px;--r:26deg;--d:.24s;--dur:1.25s"
-        d="M96,-272 C168,-170 196,-40 160,10 L104,8 C116,-62 104,-176 64,-246 Z" fill="url(#gCape)" stroke="#5d68a0" stroke-width="2" stroke-opacity=".45"/>
-  <path class="piece" style="--tx:0px;--ty:192px;--r:0deg;--d:.26s;--dur:1.25s"
-        d="M-70,-236 C-96,-150 -100,-50 -86,6 L86,6 C100,-50 96,-150 70,-236 Z" fill="#0a0c16" opacity=".92"/>
-  <path class="piece" style="--tx:-154px;--ty:176px;--r:-18deg;--d:.30s;--dur:1.1s" d="M-48,-124 L-12,-124 L-17,-12 L-54,-12 Z" fill="url(#gArmor)"/>
-  <path class="piece" style="--tx:154px;--ty:176px;--r:18deg;--d:.30s;--dur:1.1s" d="M48,-124 L12,-124 L17,-12 L54,-12 Z" fill="url(#gArmor)"/>
-  <rect class="piece" style="--tx:-192px;--ty:208px;--r:-24deg;--d:.36s;--dur:1.05s" x="-60" y="-16" width="52" height="18" rx="5" fill="#0c0e18"/>
-  <rect class="piece" style="--tx:192px;--ty:208px;--r:24deg;--d:.36s;--dur:1.05s" x="8" y="-16" width="52" height="18" rx="5" fill="#0c0e18"/>
-  <path class="piece" style="--tx:0px;--ty:-64px;--r:6deg;--d:.19s;--dur:1.1s" d="M-64,-240 L64,-240 L50,-120 L-50,-120 Z" fill="url(#gArmor)" stroke="#5d68a0" stroke-width="1.8" stroke-opacity=".4"/>
-  <path class="piece" style="--tx:0px;--ty:-64px;--r:6deg;--d:.19s;--dur:1.1s" d="M-64,-240 L0,-240 L0,-120 L-50,-120 Z" fill="#000" opacity=".18"/>
+  <!-- cape -->
+  <path class="piece" style="--tx:-306px;--ty:80px;--r:-24deg;--d:.24s;--dur:1.25s"
+        d="M-56,-300 C-116,-232 -152,-116 -156,-6 L-78,-2 C-86,-118 -76,-228 -40,-292 Z"
+        fill="url(#gCape)" stroke="#4d5678" stroke-width="1.8" stroke-opacity=".45"/>
+  <path class="piece" style="--tx:306px;--ty:80px;--r:24deg;--d:.24s;--dur:1.25s"
+        d="M56,-300 C116,-232 152,-116 156,-6 L78,-2 C86,-118 76,-228 40,-292 Z"
+        fill="url(#gCape)" stroke="#4d5678" stroke-width="1.8" stroke-opacity=".45"/>
+  <path class="piece" style="--tx:0px;--ty:190px;--r:0deg;--d:.26s;--dur:1.25s"
+        d="M-58,-306 C-96,-206 -106,-92 -98,-2 L98,-2 C106,-92 96,-206 58,-306 Z" fill="#07080f"/>
+  <!-- legs -->
+  <g class="piece" style="--tx:-150px;--ty:170px;--r:-16deg;--d:.30s;--dur:1.1s">
+    <path d="M-54,-182 L-14,-182 L-18,-34 L-58,-34 Z" fill="url(#gArmor)"/>
+    <path d="M-56,-120 L-16,-120 L-17,-104 L-57,-104 Z" fill="#242a40"/>
+  </g>
+  <g class="piece" style="--tx:150px;--ty:170px;--r:16deg;--d:.30s;--dur:1.1s">
+    <path d="M54,-182 L14,-182 L18,-34 L58,-34 Z" fill="url(#gArmor)"/>
+    <path d="M56,-120 L16,-120 L17,-104 L57,-104 Z" fill="#242a40"/>
+  </g>
+  <!-- boots -->
+  <path class="piece" style="--tx:-190px;--ty:200px;--r:-22deg;--d:.36s;--dur:1.05s"
+        d="M-62,-38 L-10,-38 L-8,-12 Q-8,-2 -20,-2 L-72,-2 Q-78,-12 -70,-26 Z" fill="#0a0c15"/>
+  <path class="piece" style="--tx:190px;--ty:200px;--r:22deg;--d:.36s;--dur:1.05s"
+        d="M62,-38 L10,-38 L8,-12 Q8,-2 20,-2 L72,-2 Q78,-12 70,-26 Z" fill="#0a0c15"/>
+  <!-- torso -->
+  <path class="piece" style="--tx:0px;--ty:-64px;--r:5deg;--d:.19s;--dur:1.1s"
+        d="M-76,-306 L76,-306 L62,-182 L-62,-182 Z" fill="url(#gArmor)"
+        stroke="#4d5678" stroke-width="1.6" stroke-opacity=".38"/>
+  <!-- abdomen ribs -->
+  <g class="piece" style="--tx:0px;--ty:150px;--r:-6deg;--d:.19s;--dur:1.1s">
+    <rect x="-48" y="-234" width="96" height="10" rx="5" fill="#191e2e"/>
+    <rect x="-46" y="-220" width="92" height="10" rx="5" fill="#191e2e"/>
+    <rect x="-44" y="-206" width="88" height="10" rx="5" fill="#191e2e"/>
+  </g>
+  <!-- belt -->
   <g class="piece" style="--tx:0px;--ty:240px;--r:-10deg;--d:.05s;--dur:.92s">
-    <rect x="-56" y="-128" width="112" height="20" rx="5" fill="#101321"/>
-    <rect x="-12" y="-126" width="24" height="16" rx="3" fill="#2a3150"/>
-    <circle cx="-32" cy="-118" r="4" fill="#e8231a" opacity=".8"/>
-    <circle cx="32" cy="-118" r="4" fill="#e8231a" opacity=".8"/>
+    <rect x="-68" y="-196" width="136" height="22" rx="5" fill="#12151f"/>
+    <rect x="-21" y="-194" width="42" height="18" rx="3" fill="#242b42"/>
+    <rect x="-58" y="-193" width="24" height="16" rx="3" fill="#1b2030"/>
+    <rect x="34" y="-193" width="24" height="16" rx="3" fill="#1b2030"/>
+    <circle cx="-46" cy="-185" r="3.4" fill="#e8231a" opacity=".75"/>
+    <circle cx="46" cy="-185" r="3.4" fill="#e8231a" opacity=".75"/>
   </g>
-  <g class="piece" style="--tx:-48px;--ty:-192px;--r:-14deg;--d:0s;--dur:.86s">
-    <rect x="-30" y="-214" width="60" height="48" rx="7" fill="#0e1120" stroke="#4b537a" stroke-width="2"/>
-    <rect class="led" x="-22" y="-206" width="13" height="9" rx="2" fill="#e8231a"/>
-    <rect class="led b" x="-4" y="-206" width="13" height="9" rx="2" fill="#f5c96b"/>
-    <rect x="14" y="-206" width="9" height="9" rx="2" fill="#2a3150"/>
-    <rect x="-22" y="-190" width="44" height="4" rx="2" fill="#2a3150"/>
-    <rect x="-22" y="-182" width="30" height="4" rx="2" fill="#2a3150"/>
+  <!-- chest control box -->
+  <g class="piece" style="--tx:-40px;--ty:-190px;--r:-12deg;--d:0s;--dur:.86s">
+    <rect x="-35" y="-292" width="70" height="56" rx="6" fill="#0d101c" stroke="#5a6386" stroke-width="2"/>
+    <rect class="led" x="-27" y="-284" width="15" height="10" rx="2" fill="#e8231a"/>
+    <rect class="led b" x="-8" y="-284" width="15" height="10" rx="2" fill="#f5c96b"/>
+    <rect x="11" y="-284" width="15" height="10" rx="2" fill="#3ddc97" opacity=".75"/>
+    <rect x="-27" y="-268" width="54" height="5" rx="2" fill="#2a3150"/>
+    <rect x="-27" y="-258" width="34" height="5" rx="2" fill="#2a3150"/>
+    <circle cx="19" cy="-254" r="5" fill="#242b42"/>
+    <rect x="-27" y="-248" width="54" height="4" rx="2" fill="#1d2336"/>
   </g>
-  <path class="piece" style="--tx:-256px;--ty:-144px;--r:-40deg;--d:.11s;--dur:1.0s" d="M-64,-248 Q-100,-244 -94,-206 L-64,-216 Z" fill="url(#gArmor)" stroke="#5d68a0" stroke-width="1.8" stroke-opacity=".45"/>
-  <path class="piece" style="--tx:256px;--ty:-144px;--r:40deg;--d:.11s;--dur:1.0s" d="M64,-248 Q100,-244 94,-206 L64,-216 Z" fill="url(#gArmor)" stroke="#5d68a0" stroke-width="1.8" stroke-opacity=".45"/>
-  <g class="piece selfpivot" style="--tx:-304px;--ty:32px;--r:-34deg;--d:.15s;--dur:1.05s">
-    <path d="M-72,-234 Q-96,-192 -88,-140 L-60,-146 Q-68,-192 -54,-228 Z" fill="url(#gArmor)"/>
-    <ellipse cx="-76" cy="-134" rx="16" ry="18" fill="#0c0e18"/>
+  <!-- pauldrons -->
+  <path class="piece" style="--tx:-256px;--ty:-140px;--r:-42deg;--d:.11s;--dur:1s"
+        d="M-82,-312 L-28,-318 L-24,-288 L-80,-280 Z" fill="url(#gArmor)"
+        stroke="#5a6386" stroke-width="1.8" stroke-opacity=".45"/>
+  <path class="piece" style="--tx:256px;--ty:-140px;--r:42deg;--d:.11s;--dur:1s"
+        d="M82,-312 L28,-318 L24,-288 L80,-280 Z" fill="url(#gArmor)"
+        stroke="#5a6386" stroke-width="1.8" stroke-opacity=".45"/>
+  <!-- arms -->
+  <g class="piece" style="--tx:-304px;--ty:40px;--r:-32deg;--d:.15s;--dur:1.05s">
+    <path d="M-80,-300 C-98,-264 -100,-230 -94,-198 L-62,-204 C-68,-238 -66,-268 -58,-296 Z" fill="url(#gArmor)"/>
+    <path d="M-94,-198 L-62,-204 L-58,-154 Q-60,-144 -72,-142 L-88,-144 Q-98,-154 -96,-170 Z" fill="#141826"/>
+    <ellipse cx="-78" cy="-136" rx="17" ry="16" fill="#0a0c14"/>
   </g>
-  <g class="piece selfpivot" style="--tx:304px;--ty:32px;--r:34deg;--d:.15s;--dur:1.05s">
-    <path d="M72,-234 Q96,-192 88,-140 L60,-146 Q68,-192 54,-228 Z" fill="url(#gArmor)"/>
-    <ellipse cx="76" cy="-134" rx="16" ry="18" fill="#0c0e18"/>
+  <g class="piece" style="--tx:304px;--ty:40px;--r:32deg;--d:.15s;--dur:1.05s">
+    <path d="M80,-300 C98,-264 100,-230 94,-198 L62,-204 C68,-238 66,-268 58,-296 Z" fill="url(#gArmor)"/>
+    <path d="M94,-198 L62,-204 L58,-154 Q60,-144 72,-142 L88,-144 Q98,-154 96,-170 Z" fill="#141826"/>
+    <ellipse cx="78" cy="-136" rx="17" ry="16" fill="#0a0c14"/>
   </g>
-  <rect class="piece" style="--tx:0px;--ty:-144px;--r:0deg;--d:.40s;--dur:.9s" x="-17" y="-258" width="34" height="26" fill="#0a0c14"/>
-  <g transform="translate(0,-262)"><g id="helmet">
-    <path d="M-58,14 C-58,-42 -34,-72 0,-72 C34,-72 58,-42 58,14 Z" fill="url(#gHelm)" stroke="#5d68a0" stroke-width="1.6" stroke-opacity=".5"/>
-    <path d="M-58,-4 L-80,30 L-56,34 Z" fill="url(#gHelm)"/>
-    <path d="M58,-4 L80,30 L56,34 Z" fill="url(#gHelm)"/>
-    <path d="M-34,-56 C-22,-64 -6,-66 4,-62 C-10,-62 -24,-58 -34,-56 Z" fill="#8f9dc4" opacity=".5"/>
-    <path d="M-56,12 L56,12 L46,46 L-46,46 Z" fill="#171b2c"/>
-    <path d="M-46,2 L46,2 L38,18 L-38,18 Z" fill="#0b0d17"/>
-    <path class="eyeGlow" d="M-40,4 L-13,-1 L-9,15 L-36,19 Z" fill="url(#gLens)"/>
-    <path class="eyeGlow" d="M40,4 L13,-1 L9,15 L36,19 Z" fill="url(#gLens)"/>
-    <path d="M-38,5 L-16,1 L-15,6 L-37,10 Z" fill="#fff" opacity=".28"/>
-    <rect x="-21" y="22" width="42" height="16" rx="4" fill="#05070d"/>
-    <g stroke="#3b4468" stroke-width="2">
-      <line x1="-13" y1="24" x2="-13" y2="36"/><line x1="-4" y1="24" x2="-4" y2="36"/>
-      <line x1="5" y1="24" x2="5" y2="36"/><line x1="14" y1="24" x2="14" y2="36"/>
+  <!-- neck column -->
+  <g class="piece" style="--tx:0px;--ty:-150px;--r:0deg;--d:.40s;--dur:.9s">
+    <rect x="-20" y="-332" width="40" height="32" fill="#080a12"/>
+    <rect x="-20" y="-328" width="40" height="4" fill="#2a3150"/>
+    <rect x="-20" y="-320" width="40" height="4" fill="#2a3150"/>
+    <rect x="-20" y="-312" width="40" height="4" fill="#2a3150"/>
+  </g>
+  <!-- helmet -->
+  <g transform="translate(0,-320)"><g id="helmet">
+    <path d="M-46,-8 C-46,-58 -26,-84 0,-84 C26,-84 46,-58 46,-8 L46,4 L-46,4 Z" fill="url(#gHelm)"/>
+    <path d="M-31,-58 C-21,-73 -5,-79 8,-76 C-9,-71 -23,-65 -31,-58 Z" fill="#c8d2f0" opacity=".33"/>
+    <path d="M-46,-14 C-61,-8 -65,14 -58,36 L-38,38 C-45,16 -43,-2 -36,-12 Z" fill="url(#gHelm)"/>
+    <path d="M46,-14 C61,-8 65,14 58,36 L38,38 C45,16 43,-2 36,-12 Z" fill="url(#gHelm)"/>
+    <path d="M-44,-10 L44,-10 L38,8 L-38,8 Z" fill="#0a0c15"/>
+    <path class="eyeGlow" d="M-38,-6 L-11,-12 L-7,6 L-34,12 Z" fill="url(#gLens)"/>
+    <path class="eyeGlow" d="M38,-6 L11,-12 L7,6 L34,12 Z" fill="url(#gLens)"/>
+    <path d="M-36,-5 L-15,-9 L-14,-4 L-35,0 Z" fill="#fff" opacity=".22"/>
+    <path d="M36,-5 L15,-9 L14,-4 L35,0 Z" fill="#fff" opacity=".22"/>
+    <path d="M-7,8 L7,8 L5,21 L-5,21 Z" fill="#12162a"/>
+    <rect x="-21" y="13" width="42" height="20" rx="3" fill="#05070d"/>
+    <g stroke="#39426a" stroke-width="2">
+      <line x1="-14" y1="16" x2="-14" y2="30"/><line x1="-5" y1="16" x2="-5" y2="30"/>
+      <line x1="4" y1="16" x2="4" y2="30"/><line x1="13" y1="16" x2="13" y2="30"/>
     </g>
-    <rect x="-46" y="20" width="16" height="12" rx="3" fill="#12162a"/>
-    <rect x="30" y="20" width="16" height="12" rx="3" fill="#12162a"/>
-    <path d="M-6,-66 L6,-66 L4,-40 L-4,-40 Z" fill="#0d1020" opacity=".7"/>
+    <rect x="-42" y="15" width="13" height="15" rx="2" fill="#10131f"/>
+    <rect x="29" y="15" width="13" height="15" rx="2" fill="#10131f"/>
+    <path d="M-53,32 L53,32 L46,52 L-46,52 Z" fill="#141826"/>
+    <path d="M-53,32 L53,32 L51,38 L-51,38 Z" fill="#2a3150" opacity=".7"/>
   </g></g>
 </g>
 </g>
@@ -452,7 +495,7 @@ body.revealed .replay{opacity:1;visibility:visible;pointer-events:auto}
   </g>
 </g></g>
 
-<circle id="flash" cx="500" cy="330" r="10" fill="url(#gFlash)"/>
+<circle id="flash" cx="500" cy="264" r="10" fill="url(#gFlash)"/>
 
 <line id="chain" x1="830" y1="0" x2="830" y2="250" stroke="#c8b48a" stroke-width="1.6" opacity=".55"/>
 <g id="pendantSwing">
@@ -473,7 +516,7 @@ body.revealed .replay{opacity:1;visibility:visible;pointer-events:auto}
 
 <section class="message" id="message">
   <p data-ru="С днём рождения, Владимир." data-en="Happy birthday, Vladimir.">С днём рождения, Владимир.</p>
-  <p data-ru="Пусть броня, которую мы все зачем-то носим, снимется легко — и окажется, что под ней всегда был свет." data-en="May the armour we all wear for some reason come off easily — and may it turn out the light was always underneath.">Пусть броня, которую мы все зачем-то носим, снимется легко — и окажется, что под ней всегда был свет.</p>
+  <p data-ru="Пусть всё тяжёлое уходит легко и быстро, а рядом остаётся только тёплое и настоящее." data-en="May everything heavy leave easily and quickly, and may only what is warm and real stay close.">Пусть всё тяжёлое уходит легко и быстро, а рядом остаётся только тёплое и настоящее.</p>
   <p data-ru="Пусть этот год принесёт много проектов в AI — тех самых, что продолжают расти, пока ты спишь." data-en="May this year bring many projects in AI — the kind that keep growing while you sleep.">Пусть этот год принесёт много проектов в AI — тех самых, что продолжают расти, пока ты спишь.</p>
   <p data-ru="Пусть рядом всегда будет Алина, и пусть любви будет больше, чем планов." data-en="May Alina always be beside you, and may there be more love than plans.">Пусть рядом всегда будет Алина, и пусть любви будет больше, чем планов.</p>
   <p data-ru="И пусть всё случится именно так, как должно случиться." data-en="And may everything happen exactly the way it is meant to.">И пусть всё случится именно так, как должно случиться.</p>
@@ -526,7 +569,7 @@ body.revealed .replay{opacity:1;visibility:visible;pointer-events:auto}
     </div>
     <div class="face back">
       <div class="glyph">☘</div>
-      <div class="body" data-ru="Нефрит — камень сердечного центра. Он не добавляет ещё один слой защиты: он растворяет ту броню, которая уже есть." data-en="Jade is the stone of the heart centre. It does not add another layer of protection: it dissolves the armour that is already there.">Нефрит — камень сердечного центра. Он не добавляет ещё один слой защиты: он растворяет ту броню, которая уже есть.</div>
+      <div class="body" data-ru="Нефрит — камень сердечного центра. Он не про защиту, а про тепло, которое спокойно идёт наружу — к своим." data-en="Jade is the stone of the heart centre. It is not about protection — it is about warmth that moves outward easily, to the people who are yours.">Нефрит — камень сердечного центра. Он не про защиту, а про тепло, которое спокойно идёт наружу — к своим.</div>
       <div class="tap" data-ru="назад" data-en="back">назад</div>
     </div>
   </div></div>
@@ -536,13 +579,13 @@ body.revealed .replay{opacity:1;visibility:visible;pointer-events:auto}
       <div class="glyph">☸</div>
       <div>
         <h3 data-ru="Сатурн ⟶ Будда" data-en="Saturn ⟶ Buddha">Сатурн ⟶ Будда</h3>
-        <div class="sub" data-ru="броня, ставшая покоем" data-en="armour that became stillness">броня, ставшая покоем</div>
+        <div class="sub" data-ru="сила, ставшая покоем" data-en="strength that became stillness">сила, ставшая покоем</div>
       </div>
       <div class="tap" data-ru="нажми" data-en="tap">нажми</div>
     </div>
     <div class="face back">
       <div class="glyph">☸</div>
-      <div class="body" data-ru="Броня — это Сатурн: когда-то она держала и спасала. Но всё, что держит, однажды становится тем, что мешает. Снять её — не слабость, а следующий уровень силы." data-en="Armour is Saturn: it once held you together. But everything that holds you eventually becomes what holds you back. Taking it off is not weakness — it is the next level of strength.">Броня — это Сатурн: когда-то она держала и спасала. Но всё, что держит, однажды становится тем, что мешает. Снять её — не слабость, а следующий уровень силы.</div>
+      <div class="body" data-ru="Сатурн — про опору и терпение: умение держать, на котором всё и стоит. А зрелость добавляет к силе покой — и держать становится легко, почти незаметно." data-en="Saturn is about foundation and patience — the ability to hold, which everything else rests on. Maturity adds stillness to that strength, and then holding becomes light, almost effortless.">Сатурн — про опору и терпение: умение держать, на котором всё и стоит. А зрелость добавляет к силе покой — и держать становится легко, почти незаметно.</div>
       <div class="tap" data-ru="назад" data-en="back">назад</div>
     </div>
   </div></div>
@@ -716,7 +759,7 @@ var swing = document.getElementById("pendantSwing");
 var chain = document.getElementById("chain");
 var jadeAura = document.getElementById("jadeAura");
 var hit = document.getElementById("pendantHit");
-var HOME = {x:830, y:250}, TARGET = {x:500, y:330};
+var HOME = {x:830, y:250}, TARGET = {x:500, y:264};
 var pos = {x:HOME.x, y:HOME.y};
 var dragging = false, state = "idle", moved = false;
 
