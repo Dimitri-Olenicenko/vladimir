@@ -118,7 +118,7 @@ body.awakened .hint{opacity:0;pointer-events:none;animation:none}
 @keyframes rise{0%{opacity:0;transform:translateY(34px) scale(.9)}55%{opacity:1}100%{opacity:1;transform:translateY(0) scale(1.13)}}
 #halo{transform-box:view-box;transform-origin:500px 300px}
 .t-run #halo{animation:haloIn 1.4s cubic-bezier(.16,1,.3,1) 1.25s forwards}
-#haloSpin{transform-box:view-box;transform-origin:500px 300px}
+#haloSpin{transform-box:view-box;transform-origin:500px 286px}
 .t-run #haloSpin{animation:spin 60s linear 1.25s infinite}
 @keyframes haloIn{0%{opacity:0;transform:scale(.34)}70%{opacity:1}100%{opacity:1;transform:scale(1)}}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -431,10 +431,10 @@ body.revealed .replay{opacity:1;visibility:visible;pointer-events:auto}
 </g>
 
 <g id="halo" opacity="0"><g id="haloSpin">
-  <circle cx="500" cy="300" r="196" fill="url(#gGlowJade)" filter="url(#soft)"/>
-  <circle cx="500" cy="300" r="134" fill="none" stroke="url(#gHalo)" stroke-width="2.2" opacity=".65"/>
-  <circle cx="500" cy="300" r="162" fill="none" stroke="url(#gHalo)" stroke-width="1.2" opacity=".4" stroke-dasharray="3 11"/>
-  <circle cx="500" cy="300" r="114" fill="none" stroke="#fff" stroke-width=".8" opacity=".18"/>
+  <circle cx="500" cy="286" r="204" fill="url(#gGlowJade)" filter="url(#soft)"/>
+  <circle cx="500" cy="286" r="140" fill="none" stroke="url(#gHalo)" stroke-width="2.2" opacity=".65"/>
+  <circle cx="500" cy="286" r="170" fill="none" stroke="url(#gHalo)" stroke-width="1.2" opacity=".4" stroke-dasharray="3 11"/>
+  <circle cx="500" cy="286" r="120" fill="none" stroke="#fff" stroke-width=".8" opacity=".18"/>
 </g></g>
 
 <g transform="translate(500,528)"><g id="buddha">
@@ -448,50 +448,76 @@ body.revealed .replay{opacity:1;visibility:visible;pointer-events:auto}
     <ellipse cx="34" cy="-12" rx="40" ry="15" fill="#ffd9e8" opacity=".55"/>
   </g>
   <g id="buddhaBreath">
-    <path d="M-92,-10 Q0,-52 92,-10 Q0,30 -92,-10 Z" fill="url(#gRobe)"/>
-    <path d="M-66,-14 Q0,-40 66,-14 Q0,6 -66,-14 Z" fill="url(#gRobe2)" opacity=".55"/>
-    <path d="M-74,-16 Q-70,-120 0,-138 Q70,-120 74,-16 Z" fill="url(#gRobe)"/>
-    <path d="M-74,-16 Q-70,-120 0,-138 Q-24,-70 -30,-16 Z" fill="#fff" opacity=".08"/>
-    <path d="M-36,-136 Q0,-86 36,-136 Q0,-114 -36,-136 Z" fill="url(#gSkin)"/>
-    <path d="M32,-134 C54,-96 50,-56 44,-22 L26,-24 C34,-58 38,-96 20,-128 Z" fill="url(#gRobe2)" opacity=".85"/>
-    <path d="M-70,-116 C-98,-86 -92,-50 -46,-38 C-64,-62 -62,-90 -52,-114 Z" fill="url(#gRobe)"/>
-    <path d="M70,-116 C98,-86 92,-50 46,-38 C64,-62 62,-90 52,-114 Z" fill="url(#gRobe)"/>
-    <ellipse cx="0" cy="-46" rx="34" ry="14" fill="url(#gSkin)"/>
-    <ellipse cx="0" cy="-54" rx="24" ry="10" fill="url(#gSkin)"/>
-    <g fill="none" stroke="#c78f3c" stroke-width="1.8" stroke-linecap="round" opacity=".7">
-      <path d="M-22,-44 Q-12,-38 -2,-42"/><path d="M22,-44 Q12,-38 2,-42"/>
+    <!-- crossed legs -->
+    <path d="M-98,-14 Q0,-60 98,-14 Q0,34 -98,-14 Z" fill="url(#gRobe)"/>
+    <path d="M-72,-20 Q0,-48 72,-20 Q0,4 -72,-20 Z" fill="url(#gRobe2)" opacity=".45"/>
+
+    <!-- torso, shoulder to hip -->
+    <path d="M-72,-140 C-80,-98 -74,-52 -60,-18 L60,-18 C74,-52 80,-98 72,-140 C56,-158 -56,-158 -72,-140 Z" fill="url(#gSkin)"/>
+    <path d="M-42,-118 Q0,-92 42,-118" fill="none" stroke="#c9853a" stroke-width="2.2" opacity=".4"/>
+    <path d="M-15,-66 Q0,-59 15,-66" fill="none" stroke="#c9853a" stroke-width="2" opacity=".3"/>
+
+    <!-- robe: diagonal across the body, then over the right shoulder -->
+    <path d="M42,-150 C10,-118 -22,-92 -64,-72 L-68,-30 C-12,-52 28,-86 56,-124 Z" fill="url(#gRobe)"/>
+    <path d="M36,-142 C6,-114 -22,-92 -58,-76" fill="none" stroke="#ffe4a6" stroke-width="2" opacity=".4"/>
+    <path d="M44,-158 C88,-146 100,-100 94,-56 L58,-44 C76,-78 74,-116 38,-140 Z" fill="url(#gRobe)"/>
+    <path d="M54,-148 C82,-134 90,-102 86,-64 L72,-58 C78,-96 72,-120 48,-138 Z" fill="url(#gRobe2)" opacity=".5"/>
+
+    <!-- bare shoulder + arm reaching the lap -->
+    <circle cx="-70" cy="-138" r="27" fill="url(#gSkin)"/>
+    <path d="M-90,-134 C-104,-102 -100,-72 -76,-57 C-58,-46 -38,-43 -24,-47 L-28,-67
+             C-46,-66 -64,-74 -73,-91 C-80,-106 -82,-122 -70,-135 Z" fill="url(#gSkin)"/>
+    <path d="M-88,-120 C-95,-94 -88,-72 -62,-58" fill="none" stroke="#c9853a" stroke-width="1.8" opacity=".28"/>
+    <path d="M74,-58 C60,-48 42,-44 26,-46 L28,-66 C46,-66 60,-70 70,-78 Z" fill="url(#gSkin)"/>
+
+    <!-- feet on the lap -->
+    <ellipse cx="-30" cy="-30" rx="23" ry="10" fill="url(#gSkin)" transform="rotate(-8 -30 -30)"/>
+    <ellipse cx="30" cy="-30" rx="23" ry="10" fill="url(#gSkin)" transform="rotate(8 30 -30)"/>
+
+    <!-- hands, dhyana mudra -->
+    <ellipse cx="0" cy="-48" rx="36" ry="15" fill="url(#gSkin)"/>
+    <ellipse cx="0" cy="-58" rx="26" ry="11" fill="url(#gSkin)"/>
+    <g fill="none" stroke="#c9853a" stroke-width="1.8" stroke-linecap="round" opacity=".55">
+      <path d="M-24,-46 Q-13,-39 -2,-44"/><path d="M24,-46 Q13,-39 2,-44"/>
     </g>
-    <circle cx="0" cy="-62" r="9" fill="#7cf3bd" opacity=".85" filter="url(#soft2)"/>
-    <rect x="-15" y="-166" width="30" height="26" fill="#e0a94e"/>
+    <circle cx="0" cy="-66" r="10" fill="#7cf3bd" opacity=".85" filter="url(#soft2)"/>
+
+    <!-- neck -->
+    <path d="M-17,-176 L17,-176 L19,-146 Q0,-136 -19,-146 Z" fill="#e0a94e"/>
+    <path d="M-19,-150 Q0,-140 19,-150" fill="none" stroke="#c9853a" stroke-width="2" opacity=".4"/>
+
+    <!-- pendant -->
     <g id="jadeChest">
-      <path d="M-26,-152 Q0,-124 26,-152" fill="none" stroke="#c8b48a" stroke-width="2"/>
-      <circle cx="0" cy="-118" r="26" fill="#7cf3bd" opacity=".35" filter="url(#soft2)"/>
-      <circle cx="0" cy="-118" r="15" fill="url(#gJade)"/>
-      <circle cx="0" cy="-118" r="6" fill="#04160f" opacity=".55"/>
-      <circle cx="-5" cy="-124" r="4" fill="#fff" opacity=".55"/>
+      <path d="M-30,-168 Q0,-130 30,-168" fill="none" stroke="#c8b48a" stroke-width="2"/>
+      <circle cx="0" cy="-124" r="27" fill="#7cf3bd" opacity=".32" filter="url(#soft2)"/>
+      <circle cx="0" cy="-124" r="15" fill="url(#gJade)"/>
+      <circle cx="0" cy="-124" r="6" fill="#04160f" opacity=".55"/>
+      <circle cx="-5" cy="-130" r="4" fill="#fff" opacity=".55"/>
     </g>
-    <ellipse cx="-46" cy="-198" rx="9" ry="24" fill="url(#gSkin)"/>
-    <ellipse cx="46" cy="-198" rx="9" ry="24" fill="url(#gSkin)"/>
-    <ellipse cx="0" cy="-202" rx="45" ry="49" fill="url(#gSkin)"/>
-    <path d="M-45,-208 Q-42,-256 0,-258 Q42,-256 45,-208 Q22,-228 0,-226 Q-22,-228 -45,-208 Z" fill="#2a2440"/>
-    <ellipse cx="0" cy="-260" rx="21" ry="17" fill="#2a2440"/>
-    <circle cx="0" cy="-276" r="6" fill="#f5c96b"/>
+
+    <!-- head -->
+    <ellipse cx="-48" cy="-212" rx="9" ry="26" fill="url(#gSkin)"/>
+    <ellipse cx="48" cy="-212" rx="9" ry="26" fill="url(#gSkin)"/>
+    <ellipse cx="0" cy="-216" rx="47" ry="51" fill="url(#gSkin)"/>
+    <path d="M-47,-222 Q-44,-272 0,-274 Q44,-272 47,-222 Q23,-243 0,-241 Q-23,-243 -47,-222 Z" fill="#2a2440"/>
+    <ellipse cx="0" cy="-276" rx="22" ry="18" fill="#2a2440"/>
+    <circle cx="0" cy="-293" r="6" fill="#f5c96b"/>
     <g fill="#3b3358">
-      <circle cx="-30" cy="-234" r="6"/><circle cx="-14" cy="-244" r="6"/>
-      <circle cx="2" cy="-247" r="6"/><circle cx="18" cy="-243" r="6"/><circle cx="32" cy="-233" r="6"/>
+      <circle cx="-32" cy="-249" r="6"/><circle cx="-15" cy="-259" r="6"/>
+      <circle cx="2" cy="-262" r="6"/><circle cx="19" cy="-258" r="6"/><circle cx="34" cy="-247" r="6"/>
     </g>
     <g fill="none" stroke="#8a5a24" stroke-width="2.6" stroke-linecap="round">
-      <path d="M-27,-206 Q-17,-197 -7,-206"/>
-      <path d="M27,-206 Q17,-197 7,-206"/>
-      <path d="M-14,-176 Q0,-167 14,-176"/>
+      <path d="M-28,-220 Q-18,-211 -8,-220"/>
+      <path d="M28,-220 Q18,-211 8,-220"/>
+      <path d="M-15,-189 Q0,-179 15,-189"/>
     </g>
     <g fill="none" stroke="#c78f3c" stroke-width="2" stroke-linecap="round" opacity=".8">
-      <path d="M-30,-216 Q-18,-222 -6,-216"/>
-      <path d="M30,-216 Q18,-222 6,-216"/>
+      <path d="M-31,-231 Q-19,-237 -7,-231"/>
+      <path d="M31,-231 Q19,-237 7,-231"/>
     </g>
-    <circle cx="0" cy="-220" r="4" fill="#f5c96b"/>
-    <ellipse cx="-20" cy="-186" rx="9" ry="5" fill="#ff9bb3" opacity=".35"/>
-    <ellipse cx="20" cy="-186" rx="9" ry="5" fill="#ff9bb3" opacity=".35"/>
+    <circle cx="0" cy="-235" r="4" fill="#f5c96b"/>
+    <ellipse cx="-21" cy="-199" rx="9" ry="5" fill="#ff9bb3" opacity=".32"/>
+    <ellipse cx="21" cy="-199" rx="9" ry="5" fill="#ff9bb3" opacity=".32"/>
   </g>
 </g></g>
 
